@@ -83,15 +83,15 @@ A web-app where you can manage the task and schedules of your employes
 
 | `put` | `/calendar/:id/` |-------- | admin | edit the task and the schedule of a worker
 
-| `get` | `/adduser` | -------- | admin | add a worker view
+| `get` | `/employee/new` | -------- | admin | add a worker view
 
-| `get` | `/adduser/data` | -------- | admin | creating user data view
+| `get` | `/employee/new/data` | -------- | admin | creating user data view
 
-| `get` | `/adduser/schedule`|-------- | admin | creating user schedule view
+| `get` | `/employee/new/schedule`|-------- | admin | creating user schedule view
 
-| `post` | `/adduser/data` | -------- | admin | create the user's data
+| `post` | `/employee/new/data` | -------- | admin | create the user's data
 
-| `post` | `/adduser/schedule` | -------- | admin |create the user's schedule
+| `post` | `/employee/new/schedule` | -------- | admin |create the user's schedule
 
 | `get` | `/user` | --------| user - admin | user can see his/her own profile
 
