@@ -7,6 +7,9 @@ import Private from './pages/Private';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import AuthProvider from './providers/AuthProvider';
+import Calendar from './pages/Calendar';
+import Home from './pages/Home';
+import User from './pages/User';
 
 
 class App extends Component {
@@ -20,6 +23,9 @@ class App extends Component {
             <AnonRoute path="/signup" component={Signup} />
             <AnonRoute path="/login" component={Login} />
             <PrivateRoute path="/private" component={Private} />
+            <PrivateRoute exact path="/" component={Home} />
+            <PrivateRoute path="/user" component={User} />
+            <PrivateRoute path="/calendar" component={Calendar} />
           </Switch>
         </div>
       </AuthProvider>
