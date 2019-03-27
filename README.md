@@ -61,7 +61,7 @@ A web-app where you can manage the task and schedules of your employes
 
 # Client
 
-​
+​medium and small companies
 
 ## Routes
 
