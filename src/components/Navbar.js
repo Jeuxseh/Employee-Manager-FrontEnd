@@ -8,7 +8,7 @@ class Navbar extends Component {
     const { username } = user;
     if (isLogged) {
       return <div>
-        <p>username: { username }</p>
+        <h3>{ username }</h3>
         <p onClick={logout}>Logout</p>
       </div>
     } else {

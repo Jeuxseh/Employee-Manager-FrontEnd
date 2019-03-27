@@ -11,6 +11,8 @@ import Calendar from './pages/Calendar';
 import Home from './pages/Home';
 import User from './pages/User';
 import NewEmployee from './pages/NewEmployee';
+import EmployeeCalendar from './pages/EmployeeCalendar';
+
 
 
 class App extends Component {
@@ -18,7 +20,6 @@ class App extends Component {
     return (
       <AuthProvider>
         <div className="container">
-          <h1>Module 3 boilerplate</h1>
           <Navbar />
           <Switch>
             <AnonRoute path="/signup" component={Signup} />
@@ -26,7 +27,8 @@ class App extends Component {
             <PrivateRoute path="/private" component={Private} />
             <PrivateRoute exact path="/" component={Home} />
             <PrivateRoute path="/user" component={User} />
-            <PrivateRoute path="/calendar" component={Calendar} />
+            <PrivateRoute exact path="/calendar" component={Calendar} />
+            <PrivateRoute path="/calendar/:id" component={EmployeeCalendar} />
             <PrivateRoute path="/employee/new" component={NewEmployee}/>
           </Switch>
         </div>

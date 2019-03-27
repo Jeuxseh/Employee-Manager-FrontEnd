@@ -8,8 +8,18 @@ class EmployeeService {
     })
   }
 
+  getAll() {
+    return this.api.get('/api/employees')
+      .then(({data}) => data)
+  }
+
   createEmployee(body) {
     return this.api.post('/api/employee', body)
+      .then(({data}) => data)
+  }
+
+  getOne(id) {
+    return this.api.get(`/api/employees/${id}`)
       .then(({data}) => data)
   }
 }
