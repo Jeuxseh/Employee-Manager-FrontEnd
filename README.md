@@ -195,8 +195,6 @@ Admin model
 
 username - String // required & unique
 
-email - String // required
-
 password - String // required
 
 workers - Array // ref worker
