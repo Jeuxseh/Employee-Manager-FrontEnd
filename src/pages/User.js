@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Footer from '../components/Footer';
-// import { withAuth } from '../providers/AuthProvider';
+import { withAuth } from '../providers/AuthProvider';
 // import currentUserService from '../services/currentUserServices';
 
 class User extends Component {
@@ -26,14 +26,20 @@ class User extends Component {
   render() {
     // const{username, password, adress, phone, email, company} = this.state.data;
     // console.log(this.state)
+    const {username, password, email, phone, address, company } = this.props.user;
     return (
       <div>
         <h2>My profile</h2>
-
+        <h3>{username}</h3>
+        <h3>{password}</h3>
+        <h3>{email}</h3>
+        <h3>{phone}</h3>
+        <h3>{address}</h3>
+        <h3>{company}</h3>
         <Footer />
       </div>
     );
   }
 }
 
-export default User;
+export default withAuth(User);
