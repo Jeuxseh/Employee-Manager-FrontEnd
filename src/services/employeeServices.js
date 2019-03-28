@@ -18,9 +18,19 @@ class EmployeeService {
       .then(({data}) => data)
   }
 
-  getOne(id) {
-    return this.api.get(`/api/employees/${id}`)
+  getEmployee(id) {
+    return this.api.get(`/api/employee/${id}`)
       .then(({data}) => data)
+  }
+
+  editEmployee(id, body) {
+    return this.api.put(`/api/employee/${id}`, body)
+    .then(({data}) => data)
+  }
+
+  deleteEmployee(id) {
+    return this.api.delete(`/api/employee/${id}`)
+    .then(({data}) => data)
   }
 }
 

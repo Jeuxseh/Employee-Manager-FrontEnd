@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Footer from '../components/Footer';
 import employeeService from '../services/employeeServices';
+import {Link} from 'react-router-dom';
+
 
 class EmployeeCalendar extends Component {
 
@@ -14,7 +16,7 @@ class EmployeeCalendar extends Component {
 
   getOneEmployee = () => {
     const {id} = this.props.match.params;
-    employeeService.getOne(id)
+    employeeService.getEmployee(id)
       .then(data=> {
         this.setState({
           data
@@ -24,9 +26,12 @@ class EmployeeCalendar extends Component {
   }
 
   render() {
+    const {_id, username} = this.state.data;
     return (
+      
       <div>
-        <h1>Calendar {this.state.data.username}</h1>
+        <h1>Calendar {username}</h1>
+        <Link to={`/employee/${_id}`} >Profile</Link>
         <Footer/>
       </div>
     );
