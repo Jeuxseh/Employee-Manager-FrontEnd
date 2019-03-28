@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CreateEmployeeScheduleForm from '../components/CreateEmployeeScheduleForm'
 
 class CreateEmployeeDataForm extends Component {
 
@@ -21,6 +22,7 @@ class CreateEmployeeDataForm extends Component {
       phone: '',
       address: '',
       email: '',
+      
     })
   }
 
@@ -40,6 +42,7 @@ class CreateEmployeeDataForm extends Component {
           <input placeholder="phone..." onChange={this.handleChange} value={this.state.phone} name="phone" type="number"/>
           <input placeholder="address..." onChange={this.handleChange} value={this.state.address} name="address" type="text"/>
           <input placeholder="email..." onChange={this.handleChange} value={this.state.email} name="email" type="email"/>
+          <CreateEmployeeScheduleForm/>
           <button type="submit">Create Employee</button>
         </form>
       </div>

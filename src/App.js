@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './stylesheets/app.css'
 import {Switch} from 'react-router-dom'
 import PrivateRoute from './components/PrivateRoute';
 import AnonRoute from './components/AnonRoute';
