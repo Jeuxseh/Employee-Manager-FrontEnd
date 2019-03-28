@@ -16,7 +16,7 @@ class EmployeeCalendar extends Component {
 
   getOneEmployee = () => {
     const {id} = this.props.match.params;
-    employeeService.getOne(id)
+    employeeService.getEmployee(id)
       .then(data=> {
         this.setState({
           data
@@ -26,11 +26,11 @@ class EmployeeCalendar extends Component {
   }
 
   render() {
-    const {_id} = this.state.data;
+    const {_id, username} = this.state.data;
     return (
       
       <div>
-        <h1>Calendar {this.state.data.username}</h1>
+        <h1>Calendar {username}</h1>
         <Link to={`/employee/${_id}`} >Profile</Link>
         <Footer/>
       </div>
