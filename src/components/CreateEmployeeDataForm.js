@@ -11,33 +11,35 @@ class CreateEmployeeDataForm extends Component {
     address: '',
     email: '',
     //week
-    monday: {
-      initHour: '',
-      endHour: ''
-    },
-    tuesday: {
-      initHour: '',
-      endHour: ''
-    },
-    wednesday: {
-      initHour: '',
-      endHour: ''
-    },
-    thursday: {
-      initHour: '',
-      endHour: ''
-    },
-    friday: {
-      initHour: '',
-      endHour: ''
-    },
-    saturday: {
-      initHour: '',
-      endHour: ''
-    },
-    sunday: {
-      initHour: '',
-      endHour: ''
+    schedule: {
+      monday: {
+        initHour: '',
+        endHour: ''
+      },
+      tuesday: {
+        initHour: '',
+        endHour: ''
+      },
+      wednesday: {
+        initHour: '',
+        endHour: ''
+      },
+      thursday: {
+        initHour: '',
+        endHour: ''
+      },
+      friday: {
+        initHour: '',
+        endHour: ''
+      },
+      saturday: {
+        initHour: '',
+        endHour: ''
+      },
+      sunday: {
+        initHour: '',
+        endHour: ''
+      }
     }
   }
   //checkbox
@@ -71,33 +73,35 @@ class CreateEmployeeDataForm extends Component {
       phone: '',
       address: '',
       email: '',
-      monday: {
-        initHour: '',
-        endHour: ''
-      },
-      tuesday: {
-        initHour: '',
-        endHour: ''
-      },
-      wednesday: {
-        initHour: '',
-        endHour: ''
-      },
-      thursday: {
-        initHour: '',
-        endHour: ''
-      },
-      friday: {
-        initHour: '',
-        endHour: ''
-      },
-      saturday: {
-        initHour: '',
-        endHour: ''
-      },
-      sunday: {
-        initHour: '',
-        endHour: ''
+      schedule: {
+        monday: {
+          initHour: '',
+          endHour: ''
+        },
+        tuesday: {
+          initHour: '',
+          endHour: ''
+        },
+        wednesday: {
+          initHour: '',
+          endHour: ''
+        },
+        thursday: {
+          initHour: '',
+          endHour: ''
+        },
+        friday: {
+          initHour: '',
+          endHour: ''
+        },
+        saturday: {
+          initHour: '',
+          endHour: ''
+        },
+        sunday: {
+          initHour: '',
+          endHour: ''
+        }
       }
     })
   }
@@ -107,36 +111,22 @@ class CreateEmployeeDataForm extends Component {
       [event.target.name]: event.target.value,
     })
 
-   
+
   }
 
   handleChangeTime = (event) => {
-    const day = event.target.name.substring(0,event.target.name.indexOf('.'))
-    const hour = event.target.name.substring(event.target.name.indexOf('.')+1,event.target.name.length)
-
-    if (hour ==='initHour') {
-      const endHour = this.state[day].endHour;
-      this.setState({
-        [day]: {
-          [hour]: event.target.value,
-          endHour,
-        },
-      })
-    } else {
-      const initHour = this.state[day].initHour;
-      this.setState({
-        [day]: {
-          [hour]: event.target.value,
-          initHour,
-        },
-      })
-    }
-
-   
+    const day = event.target.name.substring(0, event.target.name.indexOf('.'))
+    const hour = event.target.name.substring(event.target.name.indexOf('.') + 1, event.target.name.length)
+    const value = event.target.value;
+    this.setState((previousState)=>{
+      const newState = previousState;
+      newState.schedule[day][hour]=value;
+      return newState;
+    })
   }
 
   render() {
-    const { monday, tuesday, wednesday, thursday, friday, saturday, sunday } = this.state;
+    const { monday, tuesday, wednesday, thursday, friday, saturday, sunday } = this.state.schedule;
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
