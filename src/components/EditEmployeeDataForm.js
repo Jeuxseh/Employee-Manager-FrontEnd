@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import employeeService from '../services/employeeServices';
 
-class EditEmployeeDataForm extends Component {
+class EmployeeDataForm extends Component {
 
   state = {
     username: this.props.employee.username,
@@ -43,4 +43,4 @@ class EditEmployeeDataForm extends Component {
   }
 }
 
-export default EditEmployeeDataForm;
+export default EmployeeDataForm;

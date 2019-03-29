@@ -42,7 +42,7 @@ class Signup extends Component {
   }
 
   render() {
-    const { username, password, company, email, phone, address } = this.state;
+    const { username, password, company, email} = this.state;
     return (
       <div>
         <form onSubmit={this.handleFormSubmit}>
@@ -54,10 +54,10 @@ class Signup extends Component {
           <input type="text" name="company" value={company} onChange={this.handleChange} />
           <label>Email:</label>
           <input type="email" name="email" value={email} onChange={this.handleChange} />
-          <label>Phone:</label>
+          {/* <label>Phone:</label>
           <input type="number" name="phone" value={phone} onChange={this.handleChange} />
           <label>Address:</label>
-          <input type="text" name="address" value={address} onChange={this.handleChange} />
+          <input type="text" name="address" value={address} onChange={this.handleChange} /> */}
           <input type="submit" value="Signup" />
         </form>
 
