@@ -8,7 +8,7 @@ class EmployeesList extends Component {
   state = {
     data: []
   }
-
+  // Todo añadir estado del loading para indicar que esta carganado
   componentDidMount() {
     this.getAllEmployees();
   }

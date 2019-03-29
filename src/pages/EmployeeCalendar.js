@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Footer from '../components/Footer';
 import employeeService from '../services/employeeServices';
 import {Link} from 'react-router-dom';
 
@@ -32,7 +31,7 @@ class EmployeeCalendar extends Component {
       <div>
         <h1>Calendar {username}</h1>
         <Link to={`/employee/${_id}`} >Profile</Link>
-        <Footer/>
+        
       </div>
     );
   }

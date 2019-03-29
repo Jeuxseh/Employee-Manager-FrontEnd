@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './stylesheets/app.css'
-import {Switch} from 'react-router-dom'
+import {Switch, Route} from 'react-router-dom'
 import PrivateRoute from './components/PrivateRoute';
 import AnonRoute from './components/AnonRoute';
 import Navbar from './components/Navbar';
@@ -13,8 +13,21 @@ import User from './pages/User';
 import NewEmployee from './pages/NewEmployee';
 import EmployeeCalendar from './pages/EmployeeCalendar';
 import EmployeeProfile from './components/EmployeeProfile';
+import Footer from './components/Footer';
 
-
+const Layout = () => {
+  return <div>
+    <Switch>
+      <PrivateRoute exact path={`/`} component={Home} />
+      <PrivateRoute exact path={`/user`} component={User} />
+      <PrivateRoute exact path={`/calendar`} component={Calendar} />
+      <PrivateRoute exact path={`/calendar/:id`} component={EmployeeCalendar} />
+      <PrivateRoute exact path={`/employee/new`} component={NewEmployee}/>
+      <PrivateRoute exact path={`/employee/:id`} component={EmployeeProfile}/>
+    </Switch>
+    <Footer/>
+  </div>
+}
 
 class App extends Component {
   render() {
@@ -23,14 +36,9 @@ class App extends Component {
         <div className="container">
           <Navbar />
           <Switch>
-            <AnonRoute path="/signup" component={Signup} />
-            <AnonRoute path="/login" component={Login} />
-            <PrivateRoute exact path="/" component={Home} />
-            <PrivateRoute path="/user" component={User} />
-            <PrivateRoute exact path="/calendar" component={Calendar} />
-            <PrivateRoute path="/calendar/:id" component={EmployeeCalendar} />
-            <PrivateRoute path="/employee/new" component={NewEmployee}/>
-            <PrivateRoute path="/employee/:id" component={EmployeeProfile}/>
+            <AnonRoute exact path="/signup" component={Signup} />
+            <AnonRoute exact path="/login" component={Login} />
+            <Route path="/" component={Layout}/>
           </Switch>
         </div>
       </AuthProvider>

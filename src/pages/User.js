@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Footer from '../components/Footer';
 import { withAuth } from '../providers/AuthProvider';
 // import currentUserService from '../services/currentUserServices';
 
@@ -36,7 +35,6 @@ class User extends Component {
         <h3>{phone}</h3>
         <h3>{address}</h3>
         <h3>{company}</h3>
-        <Footer />
       </div>
     );
   }

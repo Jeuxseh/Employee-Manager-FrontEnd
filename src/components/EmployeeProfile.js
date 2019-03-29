@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import employeeService from '../services/employeeServices'
-import Footer from './Footer';
 import EditEmployeeDataForm from './EditEmployeeDataForm';
 
 class EmployeeProfile extends Component {
@@ -63,7 +62,7 @@ class EmployeeProfile extends Component {
           <button onClick={this.handleDelete}>Delete Employee</button>
           </>
         }
-        <Footer/>
+        
       </div>
     );
   }
