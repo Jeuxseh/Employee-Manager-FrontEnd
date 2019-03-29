@@ -16,6 +16,7 @@ export const withAuth = (Comp) => {
             return <Comp 
               isLogged={authStore.isLogged}
               user={authStore.user}
+              setUser={authStore.setUser}
               logout={authStore.logout}
               login={authStore.login}
               signup={authStore.signup}
@@ -96,6 +97,7 @@ export default class AuthProvider extends Component {
         return (
           <Provider value={
             { isLogged,
+              setUser:this.setUser,
               user,
               logout: this.logoutUser, 
               login: this.loginUser,

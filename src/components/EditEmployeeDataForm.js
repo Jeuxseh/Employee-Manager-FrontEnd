@@ -14,7 +14,7 @@ class EmployeeDataForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const {_id}= this.props.employee;
-    employeeService.Employee(_id,this.state)
+    employeeService.editEmployee(_id,this.state)
     .then((response) => {
       this.props.onSubmit(response.data);
     })
@@ -36,7 +36,7 @@ class EmployeeDataForm extends Component {
           <h2>Adress: <input placeholder="address..." onChange={this.handleChange} value={this.state.address} name="address" type="text"/></h2>
           <h2>Phone: <input placeholder="phone..." onChange={this.handleChange} value={this.state.phone} name="phone" type="number"/></h2>
           <h2>Email: <input placeholder="email..." onChange={this.handleChange} value={this.state.email} name="email" type="email"/></h2>
-          <button type="submit"> Employee</button>    
+          <button type="submit">Edit Employee</button>    
         </form>
       </div>
     );

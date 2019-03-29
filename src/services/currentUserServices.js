@@ -13,6 +13,11 @@ class CurrentUserService {
       .then(({ data }) => data)
 
   }
+
+  editCurrentUser(_,body) {
+    return this.api.put('/api/user',body)
+    .then(({data}) => data)
+  }
 }
 
 const currentUserService = new CurrentUserService();
