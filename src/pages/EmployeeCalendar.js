@@ -33,11 +33,8 @@ class EmployeeCalendar extends Component {
     var day = currentDate.toString().substr(0,3).toLocaleLowerCase();
     for (var key in obj) { 
       if (key.toString().substr(0,3) === day){
-        console.log(obj[key])
         const initHour = obj[key].initHour;
         const endHour = obj[key].endHour;
-        console.log(initHour)
-        console.log(endHour)
       } 
     }
   }
