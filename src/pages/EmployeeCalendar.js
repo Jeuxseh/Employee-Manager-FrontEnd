@@ -47,7 +47,6 @@ class EmployeeCalendar extends Component {
     var day = this.state.currentDay.toString().substr(0, 3).toLocaleLowerCase();
     for (var key in obj) {
       if (key.toString().substr(0, 3) === day) {
-        // console.log(obj[key])
         this.setState({
           currentInitHour: obj[key].initHour,
           currentEndHour: obj[key].endHour
@@ -90,10 +89,8 @@ class EmployeeCalendar extends Component {
   }
 
   dateChange = (event) => {
-
     const date = new Date();
     const day = date.getDate();
-    console.log(date)
   }
 
 

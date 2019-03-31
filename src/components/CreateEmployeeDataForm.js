@@ -58,30 +58,30 @@ class CreateEmployeeDataForm extends Component {
     return true;
   }
 
-  // onClick = (event) => {
-  //   if (this.isEmpty(this.state[event.target.name])) {
-  //     this.setState({
-  //       [event.target.name]: event.target.value,
-  //       // schedule: {
-  //       //   [event.target.name]: {
-  //       //     isClicked: true,
-  //       //   }
-  //       // }
-  //     })
+  onClick = (event) => {
+    if (this.isEmpty(this.state[event.target.name])) {
+      this.setState({
+        [event.target.name]: event.target.value,
+        // schedule: {
+        //   [event.target.name]: {
+        //     isClicked: true,
+        //   }
+        // }
+      })
 
-  //   } else {
-  //     this.setState({
-  //       [event.target.name]: {},
-  //       // schedule: {
-  //       //   [event.target.name]: {
-  //       //     isClicked: false,
-  //       //   }
-  //       // },
-  //     })
+    } else {
+      this.setState({
+        [event.target.name]: {},
+        // schedule: {
+        //   [event.target.name]: {
+        //     isClicked: false,
+        //   }
+        // }, 
+      })
 
-  //   }
+    }
 
-  // }
+  }
   onClickMonday = (event) => {
     if (this.isEmpty(this.state[event.target.name])) {
       this.setState({

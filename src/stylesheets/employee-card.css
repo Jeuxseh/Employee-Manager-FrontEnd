@@ -1,0 +1,40 @@
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  border: 1px solid black;
+  
+}
+.card {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  list-style: none;
+  font-size:20px;
+  /* justify-content: space-around; */
+  align-items: stretch;
+}
+
+.card a {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  color: blue;
+  /* justify-content: space-between; */
+  align-content: space-between;
+}
+
+.card a h2 {
+  margin-left:50px;
+}
+
+.card  img {
+ 
+  height: 35px;
+  width: 40px;
+}
+
+.card-container :hover {
+  background: yellow;
+}

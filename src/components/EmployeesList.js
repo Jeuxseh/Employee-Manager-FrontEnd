@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import EmployeeCard from './EmployeeCard';
 import employeeServices from '../services/employeeServices';
+import '../stylesheets/employee-card-list.css'
 
 
 class EmployeesList extends Component {
@@ -25,7 +26,7 @@ class EmployeesList extends Component {
 
   render() {
     return (
-      <div>
+      <>
         <ul>
           {this.state.data.map(employee => (
             <EmployeeCard 
@@ -34,7 +35,7 @@ class EmployeesList extends Component {
             />
           ))}
         </ul>
-      </div>
+      </>
     );
   }
 }
