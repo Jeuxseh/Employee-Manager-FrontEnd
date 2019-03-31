@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { withAuth } from '../providers/AuthProvider';
 import '../stylesheets/app.css';
+import '../stylesheets/login.css';
+import { Link } from 'react-router-dom';
 
 class Login extends Component {
   state = {
@@ -26,14 +28,18 @@ class Login extends Component {
   render() {
     const { username, password } = this.state;
     return (
-      <div class="container-login">
+      <div className="container-form">
+      <h2 className='login-h2'>Employee Manager</h2>
         <form onSubmit={this.handleFormSubmit} className="login-form">
-          <label>Username:</label>
-          <input class="placeholder-white" type="text" name="username" value={username} onChange={this.handleChange} />
-          <label>Password:</label>
-          <input class="placeholder-white" type="password" name="password" value={password} onChange={this.handleChange} />
+          <label>Username</label>
+          <input className="placeholder" type="text" name="username" value={username} onChange={this.handleChange} />
+          <label>Password</label>
+          <input className="placeholder" type="password" name="password" value={password} onChange={this.handleChange} />
           <input class="submitButton" type="submit" value="Login" />
         </form>
+        <p>Don't have account?
+          <Link to={"/signup"}> Sign up</Link>
+        </p>
       </div>
     )
   }

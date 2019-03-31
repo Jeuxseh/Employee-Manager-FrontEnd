@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import employeeService from '../services/employeeServices';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import Moment from 'react-moment';
 
 class EmployeeCalendar extends Component {
 
@@ -89,14 +89,6 @@ class EmployeeCalendar extends Component {
     }
   }
 
-  dateChange = (event) => {
-
-    const date = new Date();
-    const day = date.getDate();
-    console.log(date)
-  }
-
-
   render() {
     const { _id, username } = this.state.data;
     const { isLoading } = this.state;
@@ -115,8 +107,7 @@ class EmployeeCalendar extends Component {
             <h1>Calendar {username}</h1>
             <button onClick={this.countDown}><FontAwesomeIcon icon="caret-square-left" /></button>
             {/* <input onChange={this.dateChange} id="dateRequired" type="date" name="dateRequired" value={this.state.formatDate}/> */}
-            <p>{this.state.formatDate}</p>
-
+            <Moment format="dddd, L">{this.state.formatDate}</Moment>
             <button onClick={this.countUp}><FontAwesomeIcon icon="caret-square-right" /></button>
             <h2>Schedule</h2>
             <p>Hora Inicio: {this.state.currentInitHour}</p>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withAuth } from '../providers/AuthProvider';
+import '../stylesheets/login.css';
 
 class Signup extends Component {
 
@@ -42,23 +43,24 @@ class Signup extends Component {
   }
 
   render() {
-    const { username, password, company, email} = this.state;
+    const { username, password, company, email } = this.state;
     return (
-      <div>
-        <form onSubmit={this.handleFormSubmit}>
+      <div className="container-form">
+        <h2 className="login-h2">Employee Manager</h2>
+        <form onSubmit={this.handleFormSubmit} className="login-form">
           <label>Username:</label>
-          <input type="text" name="username" value={username} onChange={this.handleChange} />
+          <input className="placeholder" type="text" name="username" value={username} onChange={this.handleChange} />
           <label>Password:</label>
-          <input type="password" name="password" value={password} onChange={this.handleChange} />
+          <input className="placeholder" type="password" name="password" value={password} onChange={this.handleChange} />
           <label>Company:</label>
-          <input type="text" name="company" value={company} onChange={this.handleChange} />
+          <input className="placeholder" type="text" name="company" value={company} onChange={this.handleChange} />
           <label>Email:</label>
-          <input type="email" name="email" value={email} onChange={this.handleChange} />
+          <input className="placeholder" type="email" name="email" value={email} onChange={this.handleChange} />
           {/* <label>Phone:</label>
           <input type="number" name="phone" value={phone} onChange={this.handleChange} />
           <label>Address:</label>
           <input type="text" name="address" value={address} onChange={this.handleChange} /> */}
-          <input type="submit" value="Signup" />
+          <input class="submitButton" type="submit" value="Signup" />
         </form>
 
         <p>Already have account?

@@ -178,12 +178,12 @@ class CreateEmployeeDataForm extends Component {
 
 
 
-  renderTime = (day) => {
-    return <>
-      From: <input type="time" onChange={this.handleChangeTime} name={`${day}.initHour`} value={day.initHour}></input>
-      to: <input type="time" onChange={this.handleChangeTime} name={`${day}.endHour`} value={day.endHour}></input>
-    </>
-  }
+  // renderTime = (day) => {
+  //   return <>
+  //     From: <input type="time" onChange={this.handleChangeTime} name={`${day}.initHour`} value={day.initHour}></input>
+  //     to: <input type="time" onChange={this.handleChangeTime} name={`${day}.endHour`} value={day.endHour}></input>
+  //   </>
+  // }
 
 
   // -----------
