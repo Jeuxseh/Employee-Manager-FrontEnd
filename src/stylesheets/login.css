@@ -1,0 +1,70 @@
+.container-form{
+  background-color: rgba(103, 58, 183, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-bottom: 0px;
+  height: 100vh;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100;
+}
+
+.submitButton {
+  border: 1px solid rgba(103, 58, 183, 1);
+  background: none;
+  font-size: 1.5em;
+  font-weight: 300;
+  padding: 10px 30px 10px 30px;
+  margin-top: 40px;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 20px;
+  color: black;
+  font-weight: 600;
+  width: 50%
+}
+
+.submitButton:hover {
+  background-color: rgba(103, 58, 183, 1);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+label {
+  text-transform: uppercase;
+  font-size: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.placeholder {
+  margin-bottom: 30px;
+  padding-left: 30px;
+  border: solid 1px rgba(103, 58, 183, 1);
+  border-radius: 20px;
+  width: 50%;
+  height: 30px;
+  color: rgba(103, 58, 183, 1);
+  font-size: 15px;
+}
+
+ .login-h2 {
+  font-family: 'Neucha', cursive;
+  margin-top: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 55px;
+}
+
+p {
+  text-align: center;
+}
+a{
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 800;
+}
