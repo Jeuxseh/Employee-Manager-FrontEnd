@@ -15,11 +15,10 @@ class EmployeesList extends Component {
     this.getAllEmployees();
     this.sortEmployees(this.state.employees)
   }
-  // componentDidUpdate(){
-  //   this.getAllEmployees();
-  // }
+ 
 
   getAllEmployees = () => {
+    setTimeout(this.getAllEmployees, 20000);
     employeeServices.getAll()
       .then(data => {
        
