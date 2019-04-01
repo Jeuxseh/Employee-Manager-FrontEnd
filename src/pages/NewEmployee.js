@@ -8,7 +8,6 @@ class NewEmployee extends Component {
   handleSubmit = (data) => {
     employeeService.createEmployee(data)
       .then((result)=> {
-        console.log(result);
         this.props.history.push("/");
       }) 
   }
