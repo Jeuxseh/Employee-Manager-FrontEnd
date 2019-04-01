@@ -8,7 +8,7 @@ class HourRow extends Component {
       height: `${this.props.offsetHour}%`,
     }
 
-    console.log(scheduleContainer.height)
+    console.log('height', scheduleContainer.height)
     return (
       <li className="row-container">
           <div className="schedule-hour">{this.props.item}</div>

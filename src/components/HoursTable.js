@@ -12,11 +12,11 @@ class HoursTable extends Component {
     heightEnd: 100,
   }
 
-  componentDidMount() {
-    console.log("props table", this.props)
-    //this.setHours()
-    //this.getDataRows()
-  }
+  // componentDidMount() {
+  //   console.log("props table", this.props)
+  //   //this.setHours()
+  //   //this.getDataRows()
+  // }
 
   setHours = () => {
     this.setState({
@@ -27,32 +27,29 @@ class HoursTable extends Component {
 
   }
 
-  getHeigth = () => {
-    // const initHour = "05:25";
-    // const endHour = "22:12";
+  // getHeigth = () => {
+  //   const min1 = this.props.initHour.split(':');
+  //   const minInit = min1[1];
+  //   const min2 = this.props.endHour.split(':');
+  //   const minEnd = min2[1];
+    
+  //   let heightStart = 0;
+  //   let heightFinish = 0;
 
-    const min1 = this.props.initHour.split(':');
-    const minInit = min1[1];
-    const min2 = this.props.endHour.split(':');
-    const minEnd = min2[1];
-    let heightStart = 0;
-    let heightFinish = 0;
+  //   if (minInit !== "00") {
 
-    if (minInit !== "00") {
+  //     heightStart = 100 - (minInit / 60 * 100);
 
-      heightStart = 100 - (minInit / 60 * 100);
+  //   }
+  //   if (minEnd !== "00") {
+  //     heightFinish = minInit / 60 * 100;
+  //   }
 
-    }
-    if (minEnd !== "00") {
-      heightFinish = minInit / 60 * 100;
-    }
-
-    this.setState({
-      heightInit: heightStart,
-      heightEnd: heightFinish,
-    })
-
-  }
+  //   this.setState({
+  //     heightInit: heightStart,
+  //     heightEnd: heightFinish,
+  //   })
+  // }
 
   // getDataRows = () => {
     
@@ -79,11 +76,12 @@ class HoursTable extends Component {
   // }
 
   renderRows = () => {
-    console.log(this.state.heightEnd, this.state.heightInit)
     return this.props.dataRows.map((item, index) => {
 
-      console.log(this.state.heightEnd, this.state.heightInit, index)
+     
       if (index === 0) {
+        console.log('primera hora')
+        console.log(this.state.heightInit, index)
         return <HourRow
           key={`id-${index}`}
           item={item}
@@ -93,6 +91,7 @@ class HoursTable extends Component {
       } else if (index === this.props.dataRows.length - 1) {
         
         console.log("ultima hora")
+        console.log(this.state.heightEnd, index)
         return <HourRow
           key={`id-${index}`}
           item={item}

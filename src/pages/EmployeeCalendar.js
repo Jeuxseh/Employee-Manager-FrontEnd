@@ -33,20 +33,16 @@ class EmployeeCalendar extends Component {
         this.getSchedule(this.state.data.schedule);
         this.getFormatDay();
         this.getDataRows();
-        console.log(this.state.currentInitHour, this.state.currentEndHour)
       })
       .catch(error => console.log(error))
   }
 
   getDataRows = () => {
-    console.log("hoola")
     // const initHour = "05:25";
     // const endHour = "22:12";
     const arrayRows = [];
     const n1 = parseInt(this.state.currentInitHour)
     const n2 = parseInt(this.state.currentEndHour)
-    console.log("datarows from: ", n1)
-    console.log("datarows to: ", n2)
 
     for (let i = n1; i <= n2; i++) {
 
@@ -60,9 +56,31 @@ class EmployeeCalendar extends Component {
     })
   }
 
-  getHoursTable(){
-    console.log("pasar props: ", this.state.currentInitHour, this.state.currentEndHour)
+  getHeigth = () => {
+    const min1 = this.props.initHour.split(':');
+    const minInit = min1[1];
+    const min2 = this.props.endHour.split(':');
+    const minEnd = min2[1];
+    
+    let heightStart = 0;
+    let heightFinish = 0;
 
+    if (minInit !== "00") {
+
+      heightStart = 100 - (minInit / 60 * 100);
+
+    }
+    if (minEnd !== "00") {
+      heightFinish = minInit / 60 * 100;
+    }
+
+    this.setState({
+      heightInit: heightStart,
+      heightEnd: heightFinish,
+    })
+  }
+
+  getHoursTable(){
     return <HoursTable initHour={this.state.currentInitHour} endHour={this.state.currentEndHour} dataRows={this.state.dataRows}/>
   }
 
@@ -148,7 +166,6 @@ class EmployeeCalendar extends Component {
             <h2>Schedule</h2>
             <p>Hora Inicio: {this.state.currentInitHour}</p>
             <p>Hora Fin: {this.state.currentEndHour}</p>
-            {this.getConsoleLog()}
             {this.getHoursTable()}
           </div>
         );
