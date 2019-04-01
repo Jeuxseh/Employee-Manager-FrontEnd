@@ -106,7 +106,7 @@ class EmployeeCalendar extends Component {
             <h1>Calendar {username}</h1>
             <button onClick={this.countDown}><FontAwesomeIcon icon="caret-square-left" /></button>
             {/* <input onChange={this.dateChange} id="dateRequired" type="date" name="dateRequired" value={this.state.formatDate}/> */}
-            <Moment format="dddd, L">{this.state.formatDate}</Moment>
+            <Moment format="dddd, DD/MM/YYYY">{this.state.formatDate}</Moment>
             <button onClick={this.countUp}><FontAwesomeIcon icon="caret-square-right" /></button>
             <h2>Schedule</h2>
             <p>Hora Inicio: {this.state.currentInitHour}</p>
