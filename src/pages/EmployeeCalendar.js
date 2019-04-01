@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import employeeService from '../services/employeeServices';
+import HoursTable from '../components/HoursTable'
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Moment from 'react-moment';
@@ -8,6 +9,7 @@ class EmployeeCalendar extends Component {
 
   state = {
     data: {},
+    dataRows: [],
     currentInitHour: '',
     currentEndHour: '',
     counterDay: 0,
@@ -26,13 +28,42 @@ class EmployeeCalendar extends Component {
       .then(data => {
         this.setState({
           data,
-          isLoading: false
         })
         this.getCurrentDay();
         this.getSchedule(this.state.data.schedule);
         this.getFormatDay();
+        this.getDataRows();
+        console.log(this.state.currentInitHour, this.state.currentEndHour)
       })
       .catch(error => console.log(error))
+  }
+
+  getDataRows = () => {
+    console.log("hoola")
+    // const initHour = "05:25";
+    // const endHour = "22:12";
+    const arrayRows = [];
+    const n1 = parseInt(this.state.currentInitHour)
+    const n2 = parseInt(this.state.currentEndHour)
+    console.log("datarows from: ", n1)
+    console.log("datarows to: ", n2)
+
+    for (let i = n1; i <= n2; i++) {
+
+      let stringDay = i + ":00"
+      arrayRows.push(stringDay)
+    }
+
+    this.setState({
+      dataRows: arrayRows,
+      isLoading: false
+    })
+  }
+
+  getHoursTable(){
+    console.log("pasar props: ", this.state.currentInitHour, this.state.currentEndHour)
+
+    return <HoursTable initHour={this.state.currentInitHour} endHour={this.state.currentEndHour} dataRows={this.state.dataRows}/>
   }
 
   getCurrentDay = () => {
@@ -49,7 +80,7 @@ class EmployeeCalendar extends Component {
       if (key.toString().substr(0, 3) === day) {
         this.setState({
           currentInitHour: obj[key].initHour,
-          currentEndHour: obj[key].endHour
+          currentEndHour: obj[key].endHour,
         })
       }
     }
@@ -70,6 +101,7 @@ class EmployeeCalendar extends Component {
       this.getCurrentDay()
       this.getFormatDay()
       this.getSchedule(this.state.data.schedule)
+      this.getDataRows();
     } catch (error) {
       console.log(error);
     }
@@ -83,9 +115,14 @@ class EmployeeCalendar extends Component {
       this.getCurrentDay()
       this.getFormatDay()
       this.getSchedule(this.state.data.schedule)
+      this.getDataRows();
     } catch (error) {
       console.log(error);
     }
+  }
+
+  getConsoleLog(){
+    console.log(this.state.currentInitHour, this.state.currentEndHour)
   }
 
   render() {
@@ -111,6 +148,8 @@ class EmployeeCalendar extends Component {
             <h2>Schedule</h2>
             <p>Hora Inicio: {this.state.currentInitHour}</p>
             <p>Hora Fin: {this.state.currentEndHour}</p>
+            {this.getConsoleLog()}
+            {this.getHoursTable()}
           </div>
         );
       default:
