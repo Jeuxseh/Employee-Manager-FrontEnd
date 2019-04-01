@@ -67,8 +67,8 @@ class EmployeeCalendar extends Component {
     const min2 = this.state.currentEndHour.split(':');
     const minEnd = min2[1];
 
-    let heightStart = 0;
-    let heightFinish = 0;
+    let heightStart = 100;
+    let heightFinish = 100;
 
     if (minInit !== "00") {
 
@@ -76,8 +76,11 @@ class EmployeeCalendar extends Component {
 
     }
     if (minEnd !== "00") {
-      heightFinish = minInit / 60 * 100;
+      heightFinish = (minEnd / 60) * 100;
+    } else if (minEnd === "00") {
+      heightFinish = 0
     }
+
 
     this.setState({
       heightInit: heightStart,
