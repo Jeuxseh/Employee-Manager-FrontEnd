@@ -15,7 +15,10 @@ class EmployeeCalendar extends Component {
     counterDay: 0,
     currentDay: '',
     formatDate: '',
-    isLoading: true
+    isLoading: true,
+    heightHour: 100,
+    heightInit: 100,
+    heightEnd: 100,
   }
 
   componentDidMount() {
@@ -37,6 +40,7 @@ class EmployeeCalendar extends Component {
       .catch(error => console.log(error))
   }
 
+  //traido de HourTable.js
   getDataRows = () => {
     // const initHour = "05:25";
     // const endHour = "22:12";
@@ -49,19 +53,20 @@ class EmployeeCalendar extends Component {
       let stringDay = i + ":00"
       arrayRows.push(stringDay)
     }
+    this.getHeigth();
 
     this.setState({
       dataRows: arrayRows,
       isLoading: false
     })
   }
-
+  //traido de HourTable.js
   getHeigth = () => {
-    const min1 = this.props.initHour.split(':');
+    const min1 = this.state.currentInitHour.split(':');
     const minInit = min1[1];
-    const min2 = this.props.endHour.split(':');
+    const min2 = this.state.currentEndHour.split(':');
     const minEnd = min2[1];
-    
+
     let heightStart = 0;
     let heightFinish = 0;
 
@@ -80,8 +85,15 @@ class EmployeeCalendar extends Component {
     })
   }
 
-  getHoursTable(){
-    return <HoursTable initHour={this.state.currentInitHour} endHour={this.state.currentEndHour} dataRows={this.state.dataRows}/>
+  getHoursTable() {
+    return <HoursTable
+      initHour={this.state.currentInitHour}
+      endHour={this.state.currentEndHour}
+      dataRows={this.state.dataRows}
+      heightHour={this.state.heightHour} 
+      heightInit={this.state.heightInit}
+      heightEnd={this.state.heightEnd}
+    />
   }
 
   getCurrentDay = () => {
@@ -139,17 +151,12 @@ class EmployeeCalendar extends Component {
     }
   }
 
-  getConsoleLog(){
-    console.log(this.state.currentInitHour, this.state.currentEndHour)
-  }
-
   render() {
     const { _id, username } = this.state.data;
     const { isLoading } = this.state;
 
     var currentDate = new Date();
     currentDate.setDate(currentDate.getDate() + this.state.counterDay);
-    var date = currentDate.toISOString().substr(0, 10);
 
     switch (isLoading) {
       case true:
@@ -160,7 +167,6 @@ class EmployeeCalendar extends Component {
             <Link to={`/employee/${_id}`} >Profile</Link>
             <h1>Calendar {username}</h1>
             <button onClick={this.countDown}><FontAwesomeIcon icon="caret-square-left" /></button>
-            {/* <input onChange={this.dateChange} id="dateRequired" type="date" name="dateRequired" value={this.state.formatDate}/> */}
             <Moment format="dddd, DD/MM/YYYY">{this.state.formatDate}</Moment>
             <button onClick={this.countUp}><FontAwesomeIcon icon="caret-square-right" /></button>
             <h2>Schedule</h2>
