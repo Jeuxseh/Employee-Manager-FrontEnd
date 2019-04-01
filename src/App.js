@@ -16,9 +16,9 @@ import EmployeeProfile from './components/EmployeeProfile';
 import Footer from './components/Footer';
 import { library } from '@fortawesome/fontawesome-svg-core'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretSquareLeft, faCaretSquareRight, faHome, faCalendarAlt, faUserAlt } from '@fortawesome/free-solid-svg-icons'
+import { faCaretSquareLeft, faCaretSquareRight, faHome, faCalendarAlt, faUserAlt, faClipboardList } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faCaretSquareLeft, faCaretSquareRight, faHome, faCalendarAlt, faUserAlt)
+library.add(faCaretSquareLeft, faCaretSquareRight, faHome, faCalendarAlt, faUserAlt, faClipboardList)
 
 const Layout = () => {
   return <div>
