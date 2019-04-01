@@ -1,0 +1,48 @@
+.center-elements{
+  display:flex;
+  justify-content: center;
+}
+
+.background-color{
+  background-color: rgba(103,58,183,1)
+}
+
+#employee-schedule {
+  padding:0;
+}
+
+#employee-schedule .row-container {
+  width:90vw;
+  height: 10vh;
+  display:flex;
+  flex-direction: row;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  
+}
+
+#employee-schedule .schedule-hour {
+  
+  width:20vw;
+  color:rgba(255, 255, 255, 0.7);
+  align-self: start;
+}
+
+#employee-schedule .schedule-container {
+  width:60vw;
+  background-color:rgba(255, 255, 255, 0.2);
+  margin:0 0 0 5vw;
+  
+}
+
+#employee-schedule li:first-child .schedule-container {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color:rgba(255, 255, 255, 0.2);
+  align-self: flex-end;
+}
+
+#employee-schedule li:last-child .schedule-container {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
