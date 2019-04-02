@@ -41,7 +41,8 @@ class EmployeeCard extends Component {
   }
 
   render() {
-    const { username, _id, isWorkingToday, stillWorking } = this.props.data;
+    const { username, lastname, _id, isWorkingToday, stillWorking } = this.props.data;
+    // const {monday, tuesday, wedne}
     return (
       <div className="card-container">
         <li className="card">
@@ -52,7 +53,7 @@ class EmployeeCard extends Component {
           </div>
           <div className="name-card">
             <Link to={`/calendar/${_id}`} >
-              <h2>{username}</h2>
+              <h2>{lastname}, {username}</h2>
             </Link>
           </div>
           <div>

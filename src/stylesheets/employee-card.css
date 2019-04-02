@@ -29,6 +29,11 @@
 .card h2{
   font-size: 20px;
 }
+.card-ul{
+  margin-top:30px;
+  margin-bottom: 30px;
+  list-style: none;
+}
 
 .icon-card{
   background-color: rgb(103, 58, 183,1);

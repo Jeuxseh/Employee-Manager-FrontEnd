@@ -5,6 +5,7 @@ class CreateEmployeeDataForm extends Component {
 
   state = {
     username: '',
+    lastname: '',
     dni: '',
     password: '',
     phone: '',
@@ -192,6 +193,7 @@ class CreateEmployeeDataForm extends Component {
     this.props.onSubmit(this.state);
     this.setState({
       username: '',
+      lastname: '',
       dni: '',
       password: '',
       phone: '',
@@ -262,11 +264,12 @@ class CreateEmployeeDataForm extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <input placeholder="Username..." onChange={this.handleChange} value={this.state.username} name="username" type="text" />
-          <input placeholder="dni..." onChange={this.handleChange} value={this.state.dni} name="dni" type="text" />
-          <input placeholder="password..." onChange={this.handleChange} value={this.state.password} name="password" type="text" />
-          <input placeholder="phone..." onChange={this.handleChange} value={this.state.phone} name="phone" type="number" />
-          <input placeholder="address..." onChange={this.handleChange} value={this.state.address} name="address" type="text" />
-          <input placeholder="email..." onChange={this.handleChange} value={this.state.email} name="email" type="email" />
+          <input placeholder="Lastname..." onChange={this.handleChange} value={this.state.lastname} name="lastname" type="text" />
+          <input placeholder="Dni..." onChange={this.handleChange} value={this.state.dni} name="dni" type="text" />
+          <input placeholder="Password..." onChange={this.handleChange} value={this.state.password} name="password" type="text" />
+          <input placeholder="Phone..." onChange={this.handleChange} value={this.state.phone} name="phone" type="number" />
+          <input placeholder="Address..." onChange={this.handleChange} value={this.state.address} name="address" type="text" />
+          <input placeholder="Email..." onChange={this.handleChange} value={this.state.email} name="email" type="email" />
           <fieldset>
             <legend>Schedule</legend>
             <input onClick={this.onClickMonday} type="checkbox" name="monday" value="monday" /><label>Monday </label>
