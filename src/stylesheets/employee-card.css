@@ -1,5 +1,5 @@
 .card-container {
-  height: 50px;
+  height: 80px;
   display: flex;
   flex-direction: column;
   margin: 20px;
@@ -38,21 +38,17 @@
 .icon-card{
   background-color: rgb(103, 58, 183,1);
   border-radius: 1vh 0 0 1vh;
-  font-size: 50px;
+  font-size: 80px;
   color: rgb(255,255,255, 0.6);
 }
-/* .card-container :hover {
-  background: yellow;
- 
-} */
 .name-card{
-  margin-right: 2em;
+  display: flex;
 }
 .red-box {
   background-color: #F25C54;
   border-radius: 0 1.5vh 1.5vh 0;
   width: 35px;
-  height: 51px;
+  height: 81px;
   z-index: -1;
 }
 
@@ -60,7 +56,7 @@
   background-color: #83B692;
   border-radius: 0 1.5vh 1.5vh 0;
   width: 35px;
-  height: 51px;
+  height: 81px;
   z-index: -1;
 }
 
@@ -68,6 +64,6 @@
   border-radius: 0 1.5vh 1.5vh 0;
   background-color: #F9DC5C;
   width: 35px;
-  height: 51px;
+  height: 81px;
   z-index: -1;
 }

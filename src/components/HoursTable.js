@@ -7,16 +7,13 @@ class HoursTable extends Component {
   renderRows = () => {
     return this.props.dataRows.map((item, index) => {
       if (index === 0) {
-        console.log('heightInit', this.props.heightInit)
         return <HourRow
           key={`id-${index}`}
           item={item}
           offsetHour={this.props.heightInit}
         />
       } else if ((index === this.props.dataRows.length - 1)) {
-        console.log('heightEnd', this.props.heightEnd)
         if (this.props.heightEnd === 0) {
-          console.log('fuera')
         } else {
           return <HourRow
             key={`id-${index}`}
@@ -25,7 +22,6 @@ class HoursTable extends Component {
           />
         }
       } else {
-        console.log('heightHour', this.props.heightHour)
         return <HourRow
           key={`id-${index}`}
           item={item}
