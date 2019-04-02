@@ -21,19 +21,13 @@ class EmployeesList extends Component {
     setTimeout(this.getAllEmployees, 20000);
     employeeServices.getAll()
       .then(data => {
-       
-
         data.forEach((employee,index) => {
           this.compareDay(employee,index)
         })
-
         const newData = this.sortEmployees(data);
-
         this.setState({
           data:newData, 
         })
-
-
       })
       .catch(err => console.log(err));
   }
