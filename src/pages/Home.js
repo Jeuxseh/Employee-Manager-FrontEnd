@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import EmployeesList from '../components/EmployeesList';
 import {Link} from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 class Home extends Component {
@@ -8,7 +9,7 @@ class Home extends Component {
     return (
       <div>
         <h1>Workers Status</h1>
-        <Link to="/employee/new"><img src="../images/new-user.png" alt="new-employee"/></Link>
+        <Link to="/employee/new"><FontAwesomeIcon icon="user-plus" className="icon-userAdd"/></Link>
         <EmployeesList />
       </div>
     );
@@ -16,3 +17,5 @@ class Home extends Component {
 }
 
 export default Home;
+
+//faUserPlus

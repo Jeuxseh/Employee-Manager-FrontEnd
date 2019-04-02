@@ -11,25 +11,15 @@ class EmployeeCard extends Component {
     currentEndHour: '',
     currentDay: '',
     formatDate: '',
-    isWorkingToday: false,
-    stillWorking: false,
   }
 
   componentDidMount() {
-    this.getCurrentDay();
     this.getSchedule(this.props.data.schedule);
   }
-  
-  getCurrentDay = () => {
-    var currentDate = new Date();
-    currentDate.setDate(currentDate.getDate());
-    this.setState({
-      currentDay: currentDate
-    })
-  }
-  
+
   getSchedule = (obj) => {
-    var day = this.state.currentDay.toString().substr(0, 3).toLocaleLowerCase();
+    var currentDate = new Date();
+    var day = currentDate.toString().substr(0, 3).toLocaleLowerCase();
     for (var key in obj) {
       if (key.toString().substr(0, 3) === day) {
         this.setState({
@@ -42,27 +32,41 @@ class EmployeeCard extends Component {
 
   render() {
     const { username, lastname, _id, isWorkingToday, stillWorking, phone } = this.props.data;
-    // const {monday, tuesday, wedne}
     return (
       <div className="card-container">
         <li className="card">
+          {/* Div Imagen */}
           <div>
             <Link to={`/calendar/${_id}`} >
-              <FontAwesomeIcon icon="user" className="icon-card"/>
+              <FontAwesomeIcon icon="user" className="icon-card" />
             </Link>
+            {/* <h2>{lastname}</h2>
+            <h2>{username}</h2> */}
+         
           </div>
-          <div className="name-card">
-            <Link to={`/calendar/${_id}`} >
-              <h2>{lastname}, {username}</h2>
-            </Link>
+          {/* div contenido */}
+          <div className="div-container">
+            {/* div superior */}
+            <div className="div-top">
+              <Link to={`/calendar/${_id}`} >
+                <h2>{lastname}, {username}</h2>
+              </Link>
+              <a href={`tel:${phone}`}><FontAwesomeIcon icon="phone" className="icon-phone" /></a>
+            </div>
+            {/* div medio */}
+            <div className="div-mid">
+              mid
+            </div>
+            {/* div inferior */}
+            <div className="div-bottom" >
+              <div>
+                <FontAwesomeIcon icon="business-time" className="icon-time" />
+                {this.state.currentInitHour} - {this.state.currentEndHour}
+              </div>
+              {!isWorkingToday ? <p>Day off</p> : stillWorking ? <p>Working</p> : <p>Out of time</p>}
+            </div>
           </div>
-          <div>
-
-            <a href={`tel:${phone}`}>{phone}</a>
-          </div>
-          <div>
-          {!isWorkingToday ? <p>Dont Work today</p> : stillWorking ? <p>Working</p> : <p>Out of time</p>}
-          </div>
+          {/* DIV COLOR */}
           {!isWorkingToday ? <div className="red-box"></div> : stillWorking ? <div className="green-box"></div> : <div className="yellow-box"></div>}
         </li>
       </div>
