@@ -9,6 +9,7 @@ class User extends Component {
     data: {},
     editing: false,
     isLoading: true,
+  
   }
 
   handleClick = () => {
@@ -26,7 +27,6 @@ class User extends Component {
 
   componentDidMount() {
     currentUserService.getCurrentUser()
-
       .then((data) => {
         this.setState({
           data: data[0],

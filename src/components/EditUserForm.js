@@ -5,6 +5,7 @@ import { withAuth } from '../providers/AuthProvider';
 class EditUserForm extends Component {
 
   state = {
+    error:null,
     username: this.props.admin.username,
     dni: this.props.admin.dni,
     phone: this.props.admin.phone,
@@ -22,7 +23,15 @@ class EditUserForm extends Component {
         this.props.setUser(response.data);
 
       })
-      .catch(error => console.log(error))
+      .catch(error => {
+        if(error.response.data.error){
+          this.setState({
+            error:error.response.data.code
+          })
+        }else{
+          console.log(error)
+        }
+      })
   }
 
   handleChange = (event) => {
@@ -37,12 +46,13 @@ class EditUserForm extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <h2>My profile</h2>
-          <h3>Username: <input placeholder="Username..." onChange={this.handleChange} value={this.state.username} name="username" type="text" /></h3>
+          {/* <h3>Username: <input placeholder="Username..." onChange={this.handleChange} value={this.state.username} name="username" type="text" /></h3> */}
           <h3>Email: <input placeholder="email..." onChange={this.handleChange} value={this.state.email} name="email" type="email" /></h3>
           <h3>Company: <input placeholder="company..." onChange={this.handleChange} value={this.state.company} name="company" type="text" /></h3>
           <h3>Phone: <input placeholder="phone..." onChange={this.handleChange} value={this.state.phone} name="phone" type="number" /></h3>
           <h3>Address: <input placeholder="address..." onChange={this.handleChange} value={this.state.address} name="address" type="text" /></h3>
           <button type="submit">Edit User</button>
+          {this.state.error && <p>{this.state.error}</p>}
         </form>
       </div>
     );

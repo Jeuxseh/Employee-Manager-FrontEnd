@@ -4,7 +4,9 @@ import employeeService from '../services/employeeServices';
 class EmployeeDataForm extends Component {
 
   state = {
+    error: null,
     username: this.props.employee.username,
+    lastname: this.props.employee.lastname,
     dni: this.props.employee.dni,
     phone: this.props.employee.phone,
     address: this.props.employee.address,
@@ -49,7 +51,15 @@ class EmployeeDataForm extends Component {
       .then((response) => {
         this.props.onSubmit(response.data);
       })
-      .catch(err => console.log(err))
+      .catch(error => {
+        if(error.response.data.error){
+          this.setState({
+            error:error.response.data.code,
+          })
+        }else {
+          console.log(error);
+        }
+      })
   }
 
   handleChange = (event) => {
@@ -75,6 +85,7 @@ class EmployeeDataForm extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <h2>Name: <input placeholder="Username..." onChange={this.handleChange} value={this.state.username} name="username" type="text" /></h2>
+          <h2>Lastname: <input placeholder="Lastname..." onChange={this.handleChange} value={this.state.lastname} name="lastname" type="text" /></h2>
           <h2>DNI: <input placeholder="Dni..." onChange={this.handleChange} value={this.state.dni} name="dni" type="text" /></h2>
           <h2>Adress: <input placeholder="Address..." onChange={this.handleChange} value={this.state.address} name="address" type="text" /></h2>
           <h2>Phone: <input placeholder="Phone..." onChange={this.handleChange} value={this.state.phone} name="phone" type="number" /></h2>
@@ -110,6 +121,7 @@ class EmployeeDataForm extends Component {
             to: <input type="time" onChange={this.handleChangeTime} name="sunday.endHour" value={sunday.endHour}></input>
             <br />
           </fieldset>
+          {this.state.error && <p>{this.state.error}</p>}
           <button type="submit">Edit Employee</button>
         </form>
       </div>

@@ -6,8 +6,8 @@ class CreateEmployeeDataForm extends Component {
 
   state = {
     username: '',
+    lastname: '',
     dni: '',
-    password: '',
     phone: '',
     address: '',
     email: '',
@@ -63,25 +63,13 @@ class CreateEmployeeDataForm extends Component {
     if (this.isEmpty(this.state[event.target.name])) {
       this.setState({
         [event.target.name]: event.target.value,
-        // schedule: {
-        //   [event.target.name]: {
-        //     isClicked: true,
-        //   }
-        // }
       })
 
     } else {
       this.setState({
         [event.target.name]: {},
-        // schedule: {
-        //   [event.target.name]: {
-        //     isClicked: false,
-        //   }
-        // }, 
       })
-
     }
-
   }
   onClickMonday = (event) => {
     if (this.isEmpty(this.state[event.target.name])) {
@@ -193,6 +181,7 @@ class CreateEmployeeDataForm extends Component {
     this.props.onSubmit(this.state);
     this.setState({
       username: '',
+      lastname: '',
       dni: '',
       password: '',
       phone: '',
@@ -235,15 +224,12 @@ class CreateEmployeeDataForm extends Component {
           endHour: '',
         }
       }
-    })
+    });
   }
-
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
     })
-
-
   }
 
   handleChangeTime = (event) => {
@@ -267,11 +253,10 @@ class CreateEmployeeDataForm extends Component {
             <button className="create-button" type="submit">Create</button>
           </div>
             <input className="input-employee" placeholder="Username..." onChange={this.handleChange} value={this.state.username} name="username" type="text" />
-            <input className="input-employee" placeholder="dni..." onChange={this.handleChange} value={this.state.dni} name="dni" type="text" />
-            <input className="input-employee" placeholder="password..." onChange={this.handleChange} value={this.state.password} name="password" type="text" />
-            <input className="input-employee" placeholder="phone..." onChange={this.handleChange} value={this.state.phone} name="phone" type="number" />
-            <input className="input-employee" placeholder="address..." onChange={this.handleChange} value={this.state.address} name="address" type="text" />
-            <input className="input-employee" placeholder="email..." onChange={this.handleChange} value={this.state.email} name="email" type="email" />
+            <input className="input-employee" placeholder="Lastname..." onChange={this.handleChange} value={this.state.lastname} name="lastname" type="text" />            <input className="input-employee" placeholder="phone..." onChange={this.handleChange} value={this.state.phone} name="phone" type="number" />
+            <input className="input-employee" placeholder="Dni..." onChange={this.handleChange} value={this.state.dni} name="dni" type="text" />
+            <input className="input-employee" placeholder="Address..." onChange={this.handleChange} value={this.state.address} name="address" type="text" />
+            <input className="input-employee" placeholder="Email..." onChange={this.handleChange} value={this.state.email} name="email" type="email" />
           
           <div className="schedule-container">
             <div className="day-hour">

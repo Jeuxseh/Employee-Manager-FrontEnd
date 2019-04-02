@@ -9,15 +9,21 @@ class Login extends Component {
   state = {
     username: "",
     password: "",
+    error: null,
   }
-  // todo validaciones del formulario
 
   handleFormSubmit = (event) => {
     event.preventDefault();
     const { username, password } = this.state
 
     this.props.login({ username, password })
-      .then(() => { })
+      .then((data) => {
+        if (data.error) {
+          this.setState({
+            error: data.code,
+          })
+        }
+      })
       .catch(error => console.log(error))
   }
 
@@ -37,6 +43,7 @@ class Login extends Component {
           <input className="input-placeholder" type="text" name="username" value={username} onChange={this.handleChange}/>
           <label>Password</label>
           <input className="input-placeholder" type="password" name="password" value={password} onChange={this.handleChange} />
+          {this.state.error && <p>{this.state.error}</p>}
           <input class="submitButton" type="submit" value="Login"/>
         </form>
         <p>Don't have account?
