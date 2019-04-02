@@ -93,7 +93,7 @@
   border-radius: 0 1.5vh 1.5vh 0;
   width: 20px;
   height: 161px;
-  z-index: -1;
+  
 }
 
 .green-box {
@@ -101,7 +101,7 @@
   border-radius: 0 1.5vh 1.5vh 0;
   width: 20px;
   height: 161px;
-  z-index: -1;
+  
 }
 
 .yellow-box {
@@ -109,7 +109,7 @@
   background-color: #F9DC5C;
   width: 20px;
   height: 161px;
-  z-index: -1;
+  
 }
 
 .icon-userAdd {

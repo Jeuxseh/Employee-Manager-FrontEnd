@@ -12,7 +12,10 @@ class Home extends Component {
 
         <h1 className="title">Workers Status</h1>
         <Link to="/employee/new"><FontAwesomeIcon icon="user-plus" className="icon-userAdd"/></Link>
-        <EmployeesList />
+        <div className="list">
+          <EmployeesList />
+        </div>
+
 
       </div>
     );

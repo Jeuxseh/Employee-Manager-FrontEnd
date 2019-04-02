@@ -24,3 +24,9 @@ ul {
   margin-top:10vh;  
 
 }
+
+.list{
+  width:100%;
+  overflow: scroll;
+  height:70vh;
+}
