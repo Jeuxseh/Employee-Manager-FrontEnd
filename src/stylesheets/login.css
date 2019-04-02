@@ -17,15 +17,27 @@
   text-align: center;
   font-size: 2em;
   color:rgb(255,255,255, 0.5);
-  font-weight: lighter;
+  font-weight: bolder;
 }
 
-.logo {
+.logo-login {
   color:rgb(255,255,255, 0.5);
   font-family: 'Raleway', cursive;
   margin-top: 20px;
   text-transform: uppercase;
   font-size: 9em;
+  color:rgba(240, 192, 104, 0.842);
+}
+
+.logo-signup {
+  justify-self: flex-start;
+  align-self: flex-start;
+  margin:20px auto 0 20px;
+  color:rgb(255,255,255, 0.5);
+  font-family: 'Raleway', cursive;
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-size: 5em;
   color:rgba(240, 192, 104, 0.842);
 }
 
@@ -56,15 +68,19 @@
   border-bottom: 2px solid rgba(240, 192, 104, 0.9);
   margin-bottom: 20px;
   padding:7px 20px;
-  
   height: 30px;
-  color:rgba(24, 243, 243, 0.8) !important;
+  color:rgb(189, 243, 243, 0.8) !important;
   -webkit-appearance: none;
-  
+ 
 }
-input:-webkit-autofill {
-   
-  }
+
+.input-placeholder:focus{
+  outline: none;
+  background-color: rgba(255,255,255,0.1) !important;
+  filter:brightness(30px); 
+  /* filter:invert(100%); */
+
+}
 
 .submitButton {
   border: 0.5px solid rgba(255,255,255,0.9);
@@ -78,6 +94,7 @@ input:-webkit-autofill {
   color: rgb(255,255,255,0.9);
   font-weight: lighter;
   /* filter: blur(1px); */
+  /* filter: grayscale(100%); */
 }
 
 
@@ -87,7 +104,7 @@ input:-webkit-autofill {
 
 }
 a{
-  color:rgba(24, 243, 243, 0.8);
+  color:rgb(189, 243, 243,0.7);
   font-family: "Raleway";
   font-weight: bolder;
   font-size: 1.2em;

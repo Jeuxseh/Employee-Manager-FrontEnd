@@ -30,7 +30,7 @@ class Login extends Component {
     const { username, password } = this.state;
     return (
       <div className="container-form">
-        <FontAwesomeIcon className="logo"icon="clipboard-list" />
+        <FontAwesomeIcon className="logo-login"icon="clipboard-list" />
         <h2 className='login-h2'>Employee<br></br>Manager</h2>
         <form onSubmit={this.handleFormSubmit} className="login-form">
           <label>Username</label>
