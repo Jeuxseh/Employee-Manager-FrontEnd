@@ -8,10 +8,11 @@
   height: 100%;
   grid-template-columns: 33% 34% 33%;
   justify-items: center;
-  border-top: 1px solid rgb(255,255,255,0.1)
+  border-top: 1px solid rgb(255,255,255,0.1);
+  background-color: rgb(103, 58, 183,0.5);
 }
 .navbar-icon{
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.6);
   font-size: 40px;
   margin-top: 10px;
 }

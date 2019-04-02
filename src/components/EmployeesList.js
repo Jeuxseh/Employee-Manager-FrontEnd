@@ -90,7 +90,7 @@ class EmployeesList extends Component {
 
   render() {
     return (
-        <ul>
+        <ul className="card-ul">
           {this.state.data.map(employee => (
             <EmployeeCard 
             key={employee._id}

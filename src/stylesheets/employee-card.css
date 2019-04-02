@@ -1,17 +1,16 @@
-
 .card-container {
+  height: 80px;
   display: flex;
   flex-direction: column;
   margin: 20px;
   border: 1px solid black;
-  
+  border-radius: 1.5vh;
+  border-bottom: 3px solid rgb(103, 58, 183,0.5);
 }
+
 .card {
   display: flex;
   flex-direction: row;
-  padding: 10px;
-  list-style: none;
-  font-size:20px;
   justify-content: space-between;
 }
 
@@ -19,43 +18,52 @@
   display: flex;
   flex-direction: row;
   text-decoration: none;
-  color: blue;
-  align-content: space-between;
-  padding-top: 2px;
 }
-
-.card a h2 {
-  margin-left:20px;
-  padding-top:4px;
+.card p{
+  font-size: 12px;
 }
-
-.card  img {
-  height: 35px;
-  width: 40px;
-}
-
-/* .card-container :hover {
-  background: yellow;
- 
-} */
-
-.red-box {
-  background-color: red;
-  border-radius: 20vh;
-  width: 40px;
+.card img {
   height: 40px;
+  width: 40px;
+}
+.card h2{
+  font-size: 20px;
+}
+.card-ul{
+  margin-top:30px;
+  margin-bottom: 30px;
+  list-style: none;
+}
+
+.icon-card{
+  background-color: rgb(103, 58, 183,1);
+  border-radius: 1vh 0 0 1vh;
+  font-size: 80px;
+  color: rgb(255,255,255, 0.6);
+}
+.name-card{
+  display: flex;
+}
+.red-box {
+  background-color: #F25C54;
+  border-radius: 0 1.5vh 1.5vh 0;
+  width: 35px;
+  height: 81px;
+  z-index: -1;
 }
 
 .green-box {
-  background-color: green;
-  border-radius: 20vh;
-  width: 40px;
-  height: 40px;
-  
+  background-color: #83B692;
+  border-radius: 0 1.5vh 1.5vh 0;
+  width: 35px;
+  height: 81px;
+  z-index: -1;
 }
+
 .yellow-box {
-  border-radius: 20vh;
-  background-color: yellow;
-  width: 40px;
-  height: 40px;
+  border-radius: 0 1.5vh 1.5vh 0;
+  background-color: #F9DC5C;
+  width: 35px;
+  height: 81px;
+  z-index: -1;
 }
