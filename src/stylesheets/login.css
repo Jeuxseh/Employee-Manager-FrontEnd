@@ -1,11 +1,34 @@
 .container-form{
   background-color: rgba(103, 58, 183, 0.5);
+  background: linear-gradient(rgba(101, 153, 153, 0.5),rgba(244, 121, 31, 0.5)),url('../images/wallpaper_1.jpg');
+  background-size: 220%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
   padding-bottom: 0px;
   height: 100vh;
 }
+
+.login-h2{
+  font-family: 'Raleway';
+  margin-top:1px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2em;
+  color:rgb(255,255,255, 0.5);
+  font-weight: lighter;
+}
+
+.logo {
+  color:rgb(255,255,255, 0.5);
+  font-family: 'Raleway', cursive;
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-size: 9em;
+  color:rgba(240, 192, 104, 0.842);
+}
+
 
 .login-form {
   display: flex;
@@ -14,57 +37,60 @@
   width: 100;
 }
 
-.submitButton {
-  border: 1px solid rgba(103, 58, 183, 1);
-  background: none;
-  font-size: 1.5em;
-  font-weight: 300;
-  padding: 10px 30px 10px 30px;
-  margin-top: 40px;
-  font-family: 'Montserrat', sans-serif;
-  border-radius: 20px;
-  color: black;
-  font-weight: 600;
-  width: 50%
-}
-
-.submitButton:hover {
-  background-color: rgba(103, 58, 183, 1);
-  color: rgba(255, 255, 255, 0.5);
-}
-
-label {
-  text-transform: uppercase;
-  font-size: 25px;
+.login-form label {
+  font-size: 1.2em;
   margin-top: 10px;
   margin-bottom: 10px;
-  color: black;
+  color: rgba(255,255,255,0.9);
+  font-family: 'Raleway', sans-serif;
+  font-weight: lighter;
 }
 
-.placeholder {
-  margin-bottom: 30px;
-  padding-left: 30px;
-  border: solid 1px rgba(103, 58, 183, 1);
-  border-radius: 20px;
-  width: 50%;
+.input-placeholder {
+  font-size: 1.3em;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bolder;
+  background: transparent;
+  background-color: rgba(255,255,255,0) !important; 
+  border:none;
+  border-bottom: 2px solid rgba(240, 192, 104, 0.9);
+  margin-bottom: 20px;
+  padding:7px 20px;
+  
   height: 30px;
-  color: rgba(103, 58, 183, 1);
-  font-size: 15px;
+  color:rgba(24, 243, 243, 0.8) !important;
+  -webkit-appearance: none;
+  
+}
+input:-webkit-autofill {
+   
+  }
+
+.submitButton {
+  border: 0.5px solid rgba(255,255,255,0.9);
+  background-color: rgba(255,255,255,0);
+  font-size: 1.5em;
+  padding: 6px 60px;
+  margin-top: 30px;
+  font-family: 'Raleway', sans-serif;
+  align-self: center;
+  /* border-radius: 10px; */
+  color: rgb(255,255,255,0.9);
+  font-weight: lighter;
+  /* filter: blur(1px); */
 }
 
- .login-h2 {
-  font-family: 'Neucha', cursive;
-  margin-top: 20px;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 55px;
-}
 
-p {
-  text-align: center;
+.container-form p {
+  color:rgb(255,255,255, 0.7);
+  /* text-decoration:underline */
+
 }
 a{
-  font-size: 18px;
+  color:rgba(24, 243, 243, 0.8);
+  font-family: "Raleway";
+  font-weight: bolder;
+  font-size: 1.2em;
   text-decoration: none;
   font-weight: 800;
 }
