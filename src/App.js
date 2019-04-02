@@ -40,7 +40,6 @@ class App extends Component {
     return (
       <AuthProvider>
         <div className="container">
-          {/* <Navbar /> */}
           <Switch>
             <AnonRoute exact path="/signup" component={Signup} />
             <AnonRoute exact path="/login" component={Login} />

@@ -63,25 +63,13 @@ class CreateEmployeeDataForm extends Component {
     if (this.isEmpty(this.state[event.target.name])) {
       this.setState({
         [event.target.name]: event.target.value,
-        // schedule: {
-        //   [event.target.name]: {
-        //     isClicked: true,
-        //   }
-        // }
       })
 
     } else {
       this.setState({
         [event.target.name]: {},
-        // schedule: {
-        //   [event.target.name]: {
-        //     isClicked: false,
-        //   }
-        // }, 
       })
-
     }
-
   }
   onClickMonday = (event) => {
     if (this.isEmpty(this.state[event.target.name])) {
@@ -236,15 +224,12 @@ class CreateEmployeeDataForm extends Component {
           endHour: '',
         }
       }
-    })
+    });
   }
-
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
     })
-
-
   }
 
   handleChangeTime = (event) => {
@@ -270,6 +255,7 @@ class CreateEmployeeDataForm extends Component {
           <input placeholder="Phone..." onChange={this.handleChange} value={this.state.phone} name="phone" type="number" />
           <input placeholder="Address..." onChange={this.handleChange} value={this.state.address} name="address" type="text" />
           <input placeholder="Email..." onChange={this.handleChange} value={this.state.email} name="email" type="email" />
+          {this.props.error && <p>{this.props.error}</p>}
           <fieldset>
             <legend>Schedule</legend>
             <input onClick={this.onClickMonday} type="checkbox" name="monday" value="monday" /><label>Monday </label>
