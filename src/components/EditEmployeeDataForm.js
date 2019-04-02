@@ -4,6 +4,7 @@ import employeeService from '../services/employeeServices';
 class EmployeeDataForm extends Component {
 
   state = {
+    error: null,
     username: this.props.employee.username,
     lastname: this.props.employee.lastname,
     dni: this.props.employee.dni,
@@ -50,7 +51,15 @@ class EmployeeDataForm extends Component {
       .then((response) => {
         this.props.onSubmit(response.data);
       })
-      .catch(err => console.log(err))
+      .catch(error => {
+        if(error.response.data.error){
+          this.setState({
+            error:error.response.data.code,
+          })
+        }else {
+          console.log(error);
+        }
+      })
   }
 
   handleChange = (event) => {
@@ -112,6 +121,7 @@ class EmployeeDataForm extends Component {
             to: <input type="time" onChange={this.handleChangeTime} name="sunday.endHour" value={sunday.endHour}></input>
             <br />
           </fieldset>
+          {this.state.error && <p>{this.state.error}</p>}
           <button type="submit">Edit Employee</button>
         </form>
       </div>
