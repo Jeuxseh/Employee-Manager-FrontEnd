@@ -11,7 +11,6 @@ class Login extends Component {
     password: "",
     error: null,
   }
-  // todo validaciones del formulario
 
   handleFormSubmit = (event) => {
     event.preventDefault();

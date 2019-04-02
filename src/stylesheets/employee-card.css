@@ -3,11 +3,8 @@
   display: flex;
   flex-direction: column;
   margin: 20px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: 1px solid black;
   border-radius: 1.5vh;
-  border-bottom: 3px solid rgb(103, 58, 183, 0.5);
+  box-shadow: 0px 0px 10px 1px rgba(10,9,10,1);
 }
 
 .card {
@@ -32,11 +29,6 @@
   text-align: center;
 }
 
-.card img {
-  height: 40px;
-  width: 40px;
-}
-
 .card h2 {
   font-size: 20px;
   color: rgb(103, 58, 183);
@@ -51,42 +43,45 @@
 .div-container {
   width: 100%
 }
+.div-imagen {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .div-top {
   margin-top: 5px;
   display: flex;
-  justify-content: space-around;
-  height: 40%;
+  height: 30%;
+  align-items: center;
 }
 
 .div-mid {
   height: 30%;
+  display: flex;
+  align-items: center;
 }
 
 .div-bottom {
   height: 30%;
   display: flex;
-  justify-content: space-around;
+  align-items: center;
 }
 
 .icon-card {
-  margin-top: 10px;
-  margin-left: 10px;
   background-color: rgb(103, 58, 183, 1);
   border-radius: 10px;
   font-size: 80px;
-  /* padding-bottom: 10px; */
+  margin-bottom: 6px;
   padding-top: 5px;
   color: rgb(255, 255, 255, 0.6);
 }
 
-.icon-phone {
-  font-size: 30px;
+.icon-info {
   color: rgb(103, 58, 183, 1);
-}
-
-.icon-time {
-  color: rgb(103, 58, 183, 1);
+  margin-right: 10px;
 }
 
 .name-card {

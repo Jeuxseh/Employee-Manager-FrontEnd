@@ -9,7 +9,7 @@
   grid-template-columns: 33% 34% 33%;
   justify-items: center;
   border-top: 1px solid rgb(255,255,255,0.1);
-  background-color: rgb(103, 58, 183,0.5);
+  background-color: rgb(103, 58, 183);
 }
 .navbar-icon{
   color: rgba(255,255,255,0.6);

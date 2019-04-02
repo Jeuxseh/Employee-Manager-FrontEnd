@@ -7,7 +7,6 @@ class CreateEmployeeDataForm extends Component {
     username: '',
     lastname: '',
     dni: '',
-    password: '',
     phone: '',
     address: '',
     email: '',
@@ -251,7 +250,6 @@ class CreateEmployeeDataForm extends Component {
           <input placeholder="Username..." onChange={this.handleChange} value={this.state.username} name="username" type="text" />
           <input placeholder="Lastname..." onChange={this.handleChange} value={this.state.lastname} name="lastname" type="text" />
           <input placeholder="Dni..." onChange={this.handleChange} value={this.state.dni} name="dni" type="text" />
-          <input placeholder="Password..." onChange={this.handleChange} value={this.state.password} name="password" type="text" />
           <input placeholder="Phone..." onChange={this.handleChange} value={this.state.phone} name="phone" type="number" />
           <input placeholder="Address..." onChange={this.handleChange} value={this.state.address} name="address" type="text" />
           <input placeholder="Email..." onChange={this.handleChange} value={this.state.email} name="email" type="email" />
