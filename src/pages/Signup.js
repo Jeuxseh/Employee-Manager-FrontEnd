@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withAuth } from '../providers/AuthProvider';
 import '../stylesheets/login.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class Signup extends Component {
 
@@ -56,14 +57,16 @@ class Signup extends Component {
         <h2 className="login-h2">Employee Manager</h2>
         <form onSubmit={this.handleFormSubmit} className="login-form">
           <label>Username:</label>
-          <input className="placeholder" type="text" name="username" value={username} onChange={this.handleChange} />
+          <input className="input-placeholder" type="text" name="username" value={username} onChange={this.handleChange} />
           <label>Password:</label>
-          <input className="placeholder" type="password" name="password" value={password} onChange={this.handleChange} />
+          <input className="input-placeholder" type="password" name="password" value={password} onChange={this.handleChange} />
           <label>Company:</label>
-          <input className="placeholder" type="text" name="company" value={company} onChange={this.handleChange} />
+          <input className="input-placeholder" type="text" name="company" value={company} onChange={this.handleChange} />
           <label>Email:</label>
-          <input className="placeholder" type="email" name="email" value={email} onChange={this.handleChange} />
+          <input className="input-placeholder" type="email" name="email" value={email} onChange={this.handleChange} />
+          
           {this.state.error && <p>{this.state.error}</p>}
+
           <input class="submitButton" type="submit" value="Signup" />
         </form>
         <p>Already have account?

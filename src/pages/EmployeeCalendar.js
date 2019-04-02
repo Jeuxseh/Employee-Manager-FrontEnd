@@ -4,6 +4,7 @@ import HoursTable from '../components/HoursTable'
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Moment from 'react-moment';
+import '../stylesheets/employeeCalendar.css'
 
 class EmployeeCalendar extends Component {
 
@@ -166,16 +167,20 @@ class EmployeeCalendar extends Component {
         return "Loading....";
       case false:
         return (
-          <div>
-            <Link to={`/employee/${_id}`} >Profile</Link>
-            <h1>Calendar {username}</h1>
+          <div id="employee-calendar">
+            <div className="title title-row">
+              <h2 className='employee-h2'>Calendar <br/> {username}</h2>
+              <Link to={`/employee/${_id}`} >Profile</Link>
+            </div>
             <button onClick={this.countDown}><FontAwesomeIcon icon="caret-square-left" /></button>
             <Moment format="dddd, DD/MM/YYYY">{this.state.formatDate}</Moment>
             <button onClick={this.countUp}><FontAwesomeIcon icon="caret-square-right" /></button>
             <h2>Schedule</h2>
             <p>Hora Inicio: {this.state.currentInitHour}</p>
             <p>Hora Fin: {this.state.currentEndHour}</p>
-            {this.getHoursTable()}
+            <div className="calendar">
+              {this.getHoursTable()}
+            </div>
           </div>
         );
       default:

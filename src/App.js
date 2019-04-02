@@ -12,13 +12,14 @@ import Home from './pages/Home';
 import User from './pages/User';
 import NewEmployee from './pages/NewEmployee';
 import EmployeeCalendar from './pages/EmployeeCalendar';
+import EmployeeHome from './pages/EmployeeHome'; /// prueba del componente del employeehome
 import EmployeeProfile from './components/EmployeeProfile';
 import Footer from './components/Footer';
 import { library } from '@fortawesome/fontawesome-svg-core'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretSquareLeft, faCaretSquareRight, faHome, faCalendarAlt, faUserAlt, faUser,faClipboardList } from '@fortawesome/free-solid-svg-icons'
+import { faCaretSquareLeft, faCaretSquareRight, faHome, faCalendarAlt, faUserAlt, faUser, faClipboardList, faPhone, faUserPlus, faBusinessTime, faUserClock} from '@fortawesome/free-solid-svg-icons'
 
-library.add(faCaretSquareLeft, faCaretSquareRight, faHome, faCalendarAlt, faUserAlt, faUser,faClipboardList)
+library.add(faCaretSquareLeft, faCaretSquareRight, faHome, faCalendarAlt, faUserAlt, faUser,faClipboardList, faPhone, faUserPlus, faBusinessTime, faUserClock)
 
 const Layout = () => {
   return <div>
@@ -30,6 +31,7 @@ const Layout = () => {
       <PrivateRoute exact path={`/calendar/:id`} component={EmployeeCalendar} />
       <PrivateRoute exact path={`/employee/new`} component={NewEmployee} />
       <PrivateRoute exact path={`/employee/:id`} component={EmployeeProfile} />
+      <PrivateRoute exact path={`/employee/home`} component={EmployeeHome}/> {/* prueba del componente del employehome*/}
     </Switch>
     <Footer />
   </div>

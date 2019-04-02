@@ -14,13 +14,12 @@ HEXADEC - #673AB7
 */
 
 * {
-  margin: 0;
+  margin:0;
   font-family: 'Montserrat', sans-serif;
 }
 
 body {
   /* background-color: rgba(103, 58, 183, 1); */
-  height: 100vh;
-  /* background: rgba(103, 58, 183, 0.8); */
+  
   /* background: linear-gradient(135deg, rgba(135,107,191,1) 0%, rgba(103,58,183,1) 100%); */
 }

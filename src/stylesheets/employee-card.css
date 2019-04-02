@@ -1,11 +1,10 @@
 .card-container {
-  height: 80px;
+  height: 160px;
   display: flex;
   flex-direction: column;
   margin: 20px;
-  border: 1px solid black;
   border-radius: 1.5vh;
-  border-bottom: 3px solid rgb(103, 58, 183,0.5);
+  box-shadow: 0px 0px 10px 1px rgba(10,9,10,1);
 }
 
 .card {
@@ -19,51 +18,100 @@
   flex-direction: row;
   text-decoration: none;
 }
-.card p{
+
+.div-text {
+  display: flex;
+  align-items: flex-end;
+}
+
+.card p {
   font-size: 12px;
+  text-align: center;
 }
-.card img {
-  height: 40px;
-  width: 40px;
-}
-.card h2{
+
+.card h2 {
   font-size: 20px;
+  color: rgb(103, 58, 183);
 }
-.card-ul{
-  margin-top:30px;
-  margin-bottom: 30px;
+
+.card-ul {
+  margin-top: 30px;
+  margin-bottom: 90px;
   list-style: none;
 }
 
-.icon-card{
-  background-color: rgb(103, 58, 183,1);
-  border-radius: 1vh 0 0 1vh;
-  font-size: 80px;
-  color: rgb(255,255,255, 0.6);
+.div-container {
+  width: 100%
 }
-.name-card{
+.div-imagen {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.div-top {
+  margin-top: 5px;
+  display: flex;
+  height: 30%;
+  align-items: center;
+}
+
+.div-mid {
+  height: 30%;
+  display: flex;
+  align-items: center;
+}
+
+.div-bottom {
+  height: 30%;
+  display: flex;
+  align-items: center;
+}
+
+.icon-card {
+  background-color: rgb(103, 58, 183, 1);
+  border-radius: 10px;
+  font-size: 80px;
+  margin-bottom: 6px;
+  padding-top: 5px;
+  color: rgb(255, 255, 255, 0.6);
+}
+
+.icon-info {
+  color: rgb(103, 58, 183, 1);
+  margin-right: 10px;
+}
+
+.name-card {
   display: flex;
 }
+
 .red-box {
   background-color: #F25C54;
   border-radius: 0 1.5vh 1.5vh 0;
-  width: 35px;
-  height: 81px;
-  z-index: -1;
+  width: 20px;
+  height: 161px;
+  
 }
 
 .green-box {
   background-color: #83B692;
   border-radius: 0 1.5vh 1.5vh 0;
-  width: 35px;
-  height: 81px;
-  z-index: -1;
+  width: 20px;
+  height: 161px;
+  
 }
 
 .yellow-box {
   border-radius: 0 1.5vh 1.5vh 0;
   background-color: #F9DC5C;
-  width: 35px;
-  height: 81px;
-  z-index: -1;
+  width: 20px;
+  height: 161px;
+  
+}
+
+.icon-userAdd {
+  color: rgb(103, 58, 183, 1);
 }

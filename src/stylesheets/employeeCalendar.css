@@ -1,12 +1,46 @@
+#employee-calendar {
+
+  background-color: rgba(103, 58, 183, 0.5);
+  background: linear-gradient(rgba(101, 153, 153, 0.5),rgba(244, 121, 31, 0.5));
+  background-size: 400%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: 0px;
+  height: 100vh;
+}
+
+.calendar{
+  
+  width:100%;
+  height: 55vh;
+  overflow: scroll;
+  
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------    CALENDAR    ------ */
 .center-elements{
   display:flex;
   justify-content: center;
 }
 
 .background-color{
-  background-color: rgba(103,58,183,1);
-  padding-top: 30px;
-  padding-bottom: 100px;
+  
 }
 
 #employee-schedule {
@@ -15,7 +49,7 @@
 
 #employee-schedule .row-container {
   width:90vw;
-  height: 10vh;
+  height: 7vh;
   display:flex;
   flex-direction: row;
   border-bottom: 1px solid rgba(255,255,255,0.3);
