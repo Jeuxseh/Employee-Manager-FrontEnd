@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withAuth } from '../providers/AuthProvider';
 import EditUserForm from '../components/EditUserForm';
 import currentUserService from '../services/currentUserServices'
+import '../stylesheets/employee-data.css';
 
 class User extends Component {
 
@@ -9,7 +10,7 @@ class User extends Component {
     data: {},
     editing: false,
     isLoading: true,
-  
+
   }
 
   handleClick = () => {
@@ -45,25 +46,27 @@ class User extends Component {
       case false:
         return (
           <div>
-            {this.state.editing && <EditUserForm onSubmit={this.handleUpdate} admin={this.state.data} />}
-            {!this.state.editing &&
-              <>
-                <h2>My profile</h2>
-                <h3>Username: {username}</h3>
-                <h3>Email: {email}</h3>
-                <h3>Company: {company}</h3>
-                <h3>Phone: {phone}</h3>
-                <h3>Address:{address}</h3>
-                <button onClick={this.handleClick}>Edit profile</button>
-              </>
+            {this.state.editing ? <EditUserForm onSubmit={this.handleUpdate} admin={this.state.data} /> :
+              <div className="container-employee-form">
+                <div className="employee-form">
+                  <div className="title-row">
+                    <h2 className="employee-h2">My profile</h2>
+                  </div>
+                  <h3 className="input-employee">Email: <span class>{email}</span></h3>
+                  <h3 className="input-employee">Company: {company}</h3>
+                  <h3 className="input-employee">Phone: {phone}</h3>
+                  <h3 className="input-employee">Address:{address}</h3>
+                  <button className="edit-button" onClick={this.handleClick}>Edit</button>
+                </div>
+              </div>
             }
           </div>
         );
       default:
         break;
     }
-
   }
 }
+
 
 export default withAuth(User);

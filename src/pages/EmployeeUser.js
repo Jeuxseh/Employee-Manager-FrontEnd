@@ -21,7 +21,7 @@ class User extends Component {
 
   render() {
     const { isLoading } = this.state;
-    const { username,lastname, email, phone, address } = this.props.user;
+    const { username, lastname, email, phone, address } = this.props.user;
 
     switch (isLoading) {
       case true:
@@ -31,14 +31,18 @@ class User extends Component {
           <div>
             {this.state.editing && <EditUserForm onSubmit={this.handleUpdate} admin={this.state.data} />}
             {!this.state.editing &&
-              <>
-                <h2>My profile</h2>
-                <h3>Username: {username}</h3>
-                <h3>Lastname: {lastname}</h3>
-                <h3>Email: {email}</h3>
-                <h3>Phone: {phone}</h3>
-                <h3>Address:{address}</h3>
-              </>
+              <div className="container-employee-form">
+                <div className="employee-form">
+                  <div className="title-row">
+                    <h2 className="employee-h2">My profile</h2>
+                  </div>
+                  <h3 className="input-employee">Username: <span className="span-forms">{username}</span></h3>
+                  <h3 className="input-employee">Lastname: <span className="span-forms">{lastname}</span></h3>
+                  <h3 className="input-employee">Email: <span className="span-forms">{email}</span></h3>
+                  <h3 className="input-employee">Phone: <span className="span-forms">{phone}</span></h3>
+                  <h3 className="input-employee">Address: <span className="span-forms">{address}</span></h3>
+                </div>
+              </div>
             }
           </div>
         );

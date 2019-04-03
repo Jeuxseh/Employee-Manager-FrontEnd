@@ -31,7 +31,7 @@ class EmployeeCard extends Component {
   }
 
   render() {
-    const { username, lastname, _id, isWorkingToday, stillWorking, phone } = this.props.data;
+    const { username, lastname, _id, isWorkingToday, stillWorking, beforeWork, phone } = this.props.data;
     return (
       <div className="card-container">
         <li className="card">
@@ -51,7 +51,7 @@ class EmployeeCard extends Component {
             <div className="div-top">
               {/* <Link to={`/calendar/${_id}`} /> */}
               <FontAwesomeIcon icon="user-clock" className="icon-info" />
-              {!isWorkingToday ? <p>Day off</p> : stillWorking ? <p>Working</p> : <p>Out of time</p>}
+              {!isWorkingToday ? <p>Day off</p> : stillWorking ? <p>Working</p> : beforeWork ? <p>Work today</p> : <p>Finished</p>}
             </div>
             {/* div medio */}
             <div className="div-mid">
