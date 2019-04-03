@@ -385,10 +385,6 @@ class EmployeeDataForm extends Component {
             </div>
             <br />
           </div>
-<<<<<<< HEAD
-          
-=======
->>>>>>> c83de62ad85d3a7ef3c4a3402ead0bc91d833273
           {this.state.error && <p>{this.state.error}</p>}
           
         </form>

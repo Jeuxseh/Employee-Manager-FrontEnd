@@ -59,22 +59,6 @@ class CreateEmployeeDataForm extends Component {
     return true;
   }
 
-<<<<<<< HEAD
-  // onClick = (event) => {
-  //   if (this.isEmpty(this.state[event.target.name])) {
-  //     this.setState({
-  //       [event.target.name]: event.target.value,
-  //     })
-
-  //   } else {
-  //     this.setState({
-  //       [event.target.name]: {},
-  //     })
-  //   }
-  // }
-=======
-
->>>>>>> c83de62ad85d3a7ef3c4a3402ead0bc91d833273
   onClickMonday = (event) => {
     if (this.isEmpty(this.state[event.target.name])) {
       this.setState({
@@ -220,11 +204,8 @@ class CreateEmployeeDataForm extends Component {
   }
 
   // -----------
-<<<<<<< HEAD
-=======
 
 
->>>>>>> c83de62ad85d3a7ef3c4a3402ead0bc91d833273
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.onSubmit(this.state);
