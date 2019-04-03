@@ -3,18 +3,19 @@ import './stylesheets/app.css';
 import { Switch, Route } from 'react-router-dom'
 import PrivateRoute from './components/PrivateRoute';
 import AnonRoute from './components/AnonRoute';
+import AdminRoute from './components/AdminRoute';
 import Navbar from './components/Navbar';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import AuthProvider from './providers/AuthProvider';
-import Calendar from './pages/Calendar';
-import Home from './pages/Home';
-import User from './pages/User';
+import ConditionalHome from './components/ConditionalHome';
+import ConditionalFooter from './components/ConditionalFooter';
+
+import ConditionalUser from './components/ConditionalUser';
 import NewEmployee from './pages/NewEmployee';
 import EmployeeCalendar from './pages/EmployeeCalendar';
-import EmployeeHome from './pages/EmployeeHome'; /// prueba del componente del employeehome
 import EmployeeProfile from './components/EmployeeProfile';
-import Footer from './components/Footer';
+
 import { library } from '@fortawesome/fontawesome-svg-core'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretSquareLeft, faCaretSquareRight, faHome, faCalendarAlt, faUserAlt, faUser, faClipboardList, faPhone, faUserPlus, faBusinessTime, faUserClock} from '@fortawesome/free-solid-svg-icons'
@@ -25,15 +26,13 @@ const Layout = () => {
   return <div>
     <Navbar />
     <Switch>
-      <PrivateRoute exact path={`/`} component={Home} />
-      <PrivateRoute exact path={`/user`} component={User} />
-      <PrivateRoute exact path={`/calendar`} component={Calendar} />
-      <PrivateRoute exact path={`/calendar/:id`} component={EmployeeCalendar} />
-      <PrivateRoute exact path={`/employee/new`} component={NewEmployee} />
-      <PrivateRoute exact path={`/employee/:id`} component={EmployeeProfile} />
-      <PrivateRoute exact path={`/employee/home`} component={EmployeeHome}/> {/* prueba del componente del employehome*/}
+      <PrivateRoute exact path={`/`} component={ConditionalHome} />
+      <PrivateRoute exact path={`/user`} component={ConditionalUser} />
+      <AdminRoute exact path={`/calendar/:id`} component={EmployeeCalendar} />
+      <AdminRoute exact path={`/employee/new`} component={NewEmployee} />
+      <AdminRoute exact path={`/employee/:id`} component={EmployeeProfile} />
     </Switch>
-    <Footer />
+    <ConditionalFooter/>
   </div>
 }
 
