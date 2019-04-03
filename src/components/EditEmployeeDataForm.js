@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import employeeService from '../services/employeeServices';
 import PhotoUpload from '../components/PhotoUpload';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class EmployeeDataForm extends Component {
 
@@ -265,11 +266,10 @@ class EmployeeDataForm extends Component {
     const { monday, tuesday, wednesday, thursday, friday, saturday, sunday } = this.state.schedule;
     return (
       <div className="container-employee-form">
-        <form onSubmit={this.handleSubmit} className="employee-form">
+        <form onSubmit={this.handleSubmit} id="edit-profile">
           <div className="title-row">
             <h2 className='employee-h2'>Edit <br /> Employee</h2>
-            <PhotoUpload onUploading={this.handleUpload}/>
-            <button className="edit-button" type="submit">Edit</button>
+            <button className="button" type="submit">Edit</button>
           </div>
           <input className="input-employee" placeholder="Username..." onChange={this.handleChange} value={this.state.username} name="username" type="text" />
           <input className="input-employee" placeholder="Lastname..." onChange={this.handleChange} value={this.state.lastname} name="lastname" type="text" />

@@ -15,7 +15,7 @@ import NewEmployee from './pages/NewEmployee';
 import EmployeeCalendar from './pages/EmployeeCalendar';
 import EmployeeProfile from './components/EmployeeProfile';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faCaretSquareLeft, faCaretSquareRight, faHome, faCalendarAlt, faUserAlt, faUser, faClipboardList, faPhone, faUserPlus, faBusinessTime, faUserClock} from '@fortawesome/free-solid-svg-icons';
+import { faCaretSquareLeft, faCaretSquareRight, faHome, faCalendarAlt, faUserAlt, faUser, faClipboardList, faPhone, faUserPlus, faBusinessTime, faUserClock, faUserSlash} from '@fortawesome/free-solid-svg-icons';
 import firebase from 'firebase';
 
 const config = {
@@ -28,7 +28,7 @@ const config = {
 firebase.initializeApp(config);
 
 
-library.add(faCaretSquareLeft, faCaretSquareRight, faHome, faCalendarAlt, faUserAlt, faUser,faClipboardList, faPhone, faUserPlus, faBusinessTime, faUserClock)
+library.add(faCaretSquareLeft, faCaretSquareRight, faHome, faCalendarAlt, faUserAlt, faUser,faClipboardList, faPhone, faUserPlus, faBusinessTime, faUserClock, faUserSlash)
 
 const Layout = () => {
   return <div>
