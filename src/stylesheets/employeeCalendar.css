@@ -11,6 +11,18 @@
   height: 100vh;
 }
 
+.title-row button {
+  font-size: 1.2em;
+  display:flex;
+  flex-direction:row;
+  justify-self: end;
+  color: rgb(177, 54, 54);
+  border:1px solid rgb(177, 54, 54);
+  background-color:rgb(177, 54, 54,0.2);
+  
+  
+}
+
 .calendar{
   
   width:100%;

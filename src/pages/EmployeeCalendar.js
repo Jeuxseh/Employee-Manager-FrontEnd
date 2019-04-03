@@ -170,7 +170,7 @@ class EmployeeCalendar extends Component {
           <div id="employee-calendar">
             <div className="title title-row">
               <h2 className='employee-h2'>Calendar <br/> {username}</h2>
-              <Link to={`/employee/${_id}`} >Profile</Link>
+              <Link className="button" to={`/employee/${_id}`} >Profile</Link>
             </div>
             <button onClick={this.countDown}><FontAwesomeIcon icon="caret-square-left" /></button>
             <Moment format="dddd, DD/MM/YYYY">{this.state.formatDate}</Moment>
