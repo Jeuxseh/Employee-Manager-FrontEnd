@@ -110,12 +110,23 @@
   justify-self: center;  */
 }
 
+#profie .button {
+  font-size: 1.2em;
+  display:flex;
+  flex-direction:row;
+  justify-self: end;
+  color: rgb(177, 54, 54);
+  border:1px solid rgb(177, 54, 54);
+  background-color:rgb(177, 54, 54,0.2);
+}
+
 #profile .edit-button{
   margin:0px 30px;
   padding:10px 15px;
   font-size: 1.2em;
   color: white;
-  border:1px solid rgba(101, 153, 153, 1);
+  border:none;
+  /* border:1px solid rgba(101, 153, 153, 1); */
   background: none;
   border-radius:none;
   background-color:rgba(101, 153, 153, 0.5);
@@ -125,10 +136,16 @@
   margin:0px 30px;
   padding:10px 15px;
   font-size: 1.2em;
-  color:rgb(177, 54, 54);
-  border:1px solid rgb(177, 54, 54);
+  color:white;
+  border:none;
+  /* border:1px solid rgb(177, 54, 54); */
   background: none;
   background-color:rgb(177, 54, 54,0.5);
+}
+
+#edit-profile{
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -145,7 +162,6 @@
   color: rgb(177, 54, 54);
   border:1px solid rgb(177, 54, 54);
   background-color:rgb(177, 54, 54,0.2);
-  
   
 }
 

@@ -68,7 +68,7 @@ class EmployeeProfile extends Component {
             </div>
             <div className="buttons-container">
               <button className="edit-button" onClick={this.handleClick}>Edit Profile</button>
-              <button className="delete-button"onClick={this.handleDelete}>Delete</button>
+              <button className="delete-button"onClick={this.handleDelete}><FontAwesomeIcon icon="user-slash" /></button>
             </div>
             </>
           }
