@@ -61,6 +61,21 @@
   border-radius: 2vh;
 }
 
+.input-user {
+  width: 70vw;
+  font-size: 1.1em;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bolder;
+  background: transparent;
+  /* background-color: rgba(255,255,255,0) !important;  */
+  border:none;
+  /* border-bottom: 2px solid rgba(87, 86, 86, 0.3); */
+  margin: 2px 0 5px 0;
+  height: 30px;
+  color:white !important;
+  -webkit-appearance: none;
+  justify-items: start;
+}
 .input-employee {
   width: 70vw;
   font-size: 1.1em;
@@ -76,6 +91,7 @@
   -webkit-appearance: none;
   justify-items: start;
 }
+
 .span-forms{
   margin-left: 5%;
 }
@@ -83,7 +99,7 @@
   width: 53%;
   padding-left: 5%;
   margin-left: 5%;
-  font-size: 1.1em;
+  font-size: 0.9em;
   font-family: 'Raleway', sans-serif;
   font-weight: bolder;
   background: transparent;

@@ -52,10 +52,10 @@ class User extends Component {
                   <div className="title-row">
                     <h2 className="employee-h2">My profile</h2>
                   </div>
-                  <h3 className="input-employee">Email: <span class>{email}</span></h3>
-                  <h3 className="input-employee">Company: {company}</h3>
-                  <h3 className="input-employee">Phone: {phone}</h3>
-                  <h3 className="input-employee">Address:{address}</h3>
+                  <h3 className="input-user">Email: <span className="span-forms">{email}</span></h3>
+                  <h3 className="input-user">Company: <span className="span-forms">{company}</span></h3>
+                  <h3 className="input-user">Phone: <span className="span-forms">{phone}</span></h3>
+                  <h3 className="input-user">Address:<span className="span-forms">{address}</span></h3>
                   <button className="edit-button" onClick={this.handleClick}>Edit</button>
                 </div>
               </div>
