@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import employeeService from '../services/employeeServices';
+import PhotoUpload from '../components/PhotoUpload';
 
 class EmployeeDataForm extends Component {
 
@@ -11,6 +12,7 @@ class EmployeeDataForm extends Component {
     phone: this.props.employee.phone,
     address: this.props.employee.address,
     email: this.props.employee.email,
+    imageUrl:'',
     //week
     schedule: {
       monday: {
@@ -68,6 +70,12 @@ class EmployeeDataForm extends Component {
     })
   }
 
+  handleUpload = (url) => {
+    this.setState({
+      ImageUrl: url,
+    })
+  }
+
   handleChangeTime = (event) => {
     const day = event.target.name.substring(0, event.target.name.indexOf('.'))
     const hour = event.target.name.substring(event.target.name.indexOf('.') + 1, event.target.name.length)
@@ -83,6 +91,7 @@ class EmployeeDataForm extends Component {
     const { monday, tuesday, wednesday, thursday, friday, saturday, sunday } = this.state.schedule;
     return (
       <div>
+        
         <form onSubmit={this.handleSubmit}>
           <h2>Name: <input placeholder="Username..." onChange={this.handleChange} value={this.state.username} name="username" type="text" /></h2>
           <h2>Lastname: <input placeholder="Lastname..." onChange={this.handleChange} value={this.state.lastname} name="lastname" type="text" /></h2>
@@ -122,6 +131,7 @@ class EmployeeDataForm extends Component {
             <br />
           </fieldset>
           {this.state.error && <p>{this.state.error}</p>}
+          <PhotoUpload onUploading={this.handleUpload}/>
           <button type="submit">Edit Employee</button>
         </form>
       </div>

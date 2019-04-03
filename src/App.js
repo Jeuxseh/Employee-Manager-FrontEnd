@@ -15,7 +15,18 @@ import NewEmployee from './pages/NewEmployee';
 import EmployeeCalendar from './pages/EmployeeCalendar';
 import EmployeeProfile from './components/EmployeeProfile';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faCaretSquareLeft, faCaretSquareRight, faHome, faCalendarAlt, faUserAlt, faUser, faClipboardList, faPhone, faUserPlus, faBusinessTime, faUserClock} from '@fortawesome/free-solid-svg-icons'
+import { faCaretSquareLeft, faCaretSquareRight, faHome, faCalendarAlt, faUserAlt, faUser, faClipboardList, faPhone, faUserPlus, faBusinessTime, faUserClock} from '@fortawesome/free-solid-svg-icons';
+import firebase from 'firebase';
+
+const config = {
+  apiKey: "AIzaSyD_XG3uDTXXIskiCUSrApo0vR2EMfDeaRM",
+  authDomain: "employeemanager-ca333.firebaseapp.com",
+  databaseURL: "https://employeemanager-ca333.firebaseio.com",
+  storageBucket:  "employeemanager-ca333.appspot.com",
+};
+
+firebase.initializeApp(config);
+
 
 library.add(faCaretSquareLeft, faCaretSquareRight, faHome, faCalendarAlt, faUserAlt, faUser,faClipboardList, faPhone, faUserPlus, faBusinessTime, faUserClock)
 

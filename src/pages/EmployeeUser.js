@@ -21,7 +21,7 @@ class User extends Component {
 
   render() {
     const { isLoading } = this.state;
-    const { username, lastname, email, phone, address } = this.props.user;
+    const { username, lastname, email, phone, address, imageUrl } = this.props.user;
 
     switch (isLoading) {
       case true:
@@ -35,6 +35,7 @@ class User extends Component {
                 <div className="employee-form">
                   <div className="title-row">
                     <h2 className="employee-h2">My profile</h2>
+                    <img src={`${imageUrl}`} alt="imageProfile"/>
                   </div>
                   <h3 className="input-employee">Username: <span className="span-forms">{username}</span></h3>
                   <h3 className="input-employee">Lastname: <span className="span-forms">{lastname}</span></h3>

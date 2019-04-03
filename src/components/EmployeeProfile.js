@@ -47,13 +47,14 @@ class EmployeeProfile extends Component {
   }
 
   render() {
-    const {username, lastname, dni, address, phone, email} = this.state.data;
+    const {username, lastname, dni, address, phone, email, imageUrl} = this.state.data;
     return (
       <div>
         {this.state.editing && <EditEmployeeDataForm onSubmit={this.handleUpdate} employee={this.state.data}/>}
         {!this.state.editing && 
         
           <>
+          <img src={`${imageUrl}`} alt="imageProfile"/>
           <h2>Name: {username}</h2>
           <h2>Lastname: {lastname}</h2>
           <h2>DNI: {dni}</h2>
