@@ -168,16 +168,18 @@ class EmployeeCalendar extends Component {
       case false:
         return (
           <div id="employee-calendar">
-            <div className="title title-row">
+            <div className="title-row">
               <h2 className='employee-h2'>Calendar <br/> {username}</h2>
               <Link className="button" to={`/employee/${_id}`} >Profile</Link>
             </div>
-            <button onClick={this.countDown}><FontAwesomeIcon icon="caret-square-left" /></button>
-            <Moment format="dddd, DD/MM/YYYY">{this.state.formatDate}</Moment>
-            <button onClick={this.countUp}><FontAwesomeIcon icon="caret-square-right" /></button>
-            <h2>Schedule</h2>
-            <p>Hora Inicio: {this.state.currentInitHour}</p>
-            <p>Hora Fin: {this.state.currentEndHour}</p>
+            <div className="day-selector">
+              <button onClick={this.countDown}><FontAwesomeIcon icon="caret-square-left" /></button>
+              <Moment className="date" format="dddd, DD/MM/YYYY">{this.state.formatDate}</Moment>
+              <button onClick={this.countUp}><FontAwesomeIcon icon="caret-square-right" /></button>
+            </div>
+            <p className="from-to"> from: <span>{this.state.currentInitHour}</span> to: <span>{this.state.currentEndHour}</span> </p>
+              
+            
             <div className="calendar">
               {this.getHoursTable()}
             </div>
