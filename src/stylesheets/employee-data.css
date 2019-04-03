@@ -63,6 +63,18 @@
   align-self: center;
 }
 
+.employee-image{
+  margin-top: 15vh;
+    color: white;
+    border: 2px solid white;
+    border-radius: 20%;
+    padding: 10px;
+    font-size: 3em;
+    align-self: center;
+    width: 45%;
+    height: 20%;
+}
+
 #profile .employee-h2{
   font-family: 'Raleway';
   text-transform: uppercase;
