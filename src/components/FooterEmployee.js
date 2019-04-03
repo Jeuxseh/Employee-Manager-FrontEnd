@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 class FooterEmployee extends Component {
   render() {
     return (
-      <div className="navbar-container">
+      <div className="footer-employee">
         <Link to='/employee/:id' className="navbar-icon"><FontAwesomeIcon icon="home" /></Link>
         <Link to='/user' className="navbar-icon"><FontAwesomeIcon icon="user-alt" /></Link>
       </div>

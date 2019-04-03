@@ -52,6 +52,7 @@ class EmployeeProfile extends Component {
       <div>
         {this.state.editing && <EditEmployeeDataForm onSubmit={this.handleUpdate} employee={this.state.data}/>}
         {!this.state.editing && 
+        
           <>
           <h2>Name: {username}</h2>
           <h2>Lastname: {lastname}</h2>
