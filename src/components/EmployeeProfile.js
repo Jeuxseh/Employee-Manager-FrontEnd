@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import employeeService from '../services/employeeServices'
 import EditEmployeeDataForm from './EditEmployeeDataForm';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class EmployeeProfile extends Component {
 
@@ -49,23 +50,30 @@ class EmployeeProfile extends Component {
   render() {
     const {username, lastname, dni, address, phone, email, imageUrl} = this.state.data;
     return (
-      <div>
-        {this.state.editing && <EditEmployeeDataForm onSubmit={this.handleUpdate} employee={this.state.data}/>}
-        {!this.state.editing && 
-        
-          <>
-          <img src={`${imageUrl}`} alt="imageProfile"/>
-          <h2>Name: {username}</h2>
-          <h2>Lastname: {lastname}</h2>
-          <h2>DNI: {dni}</h2>
-          <h2>Adress: {address}</h2>
-          <h2>Phone: {phone}</h2>
-          <h2>Email: {email}</h2>
-          <button onClick={this.handleClick}>Edit profile</button>
-          <button onClick={this.handleDelete}>Delete Employee</button>
-          </>
-        }
-        
+      <div id="profile">
+        <div className="container-employee-form-profile">
+          {this.state.editing && <EditEmployeeDataForm onSubmit={this.handleUpdate} employee={this.state.data}/>}
+          {!this.state.editing && 
+            <>
+            
+            <FontAwesomeIcon icon="user" className="image-employee" />
+            <h2 className='employee-h2'>{username} <span>' s Profile</span></h2>
+            <div className="fields">
+              <h2>Name: <span>{username}</span></h2>
+              <h2>Lastname: <span> {lastname}</span></h2>
+              <h2>DNI: <span> {dni}</span></h2>
+              <h2>Adress: <span> {address}</span></h2>
+              <h2>Phone: <span> {phone}</span></h2>
+              <h2>Email: <span> {email}</span></h2>
+            </div>
+            <div className="buttons-container">
+              <button className="edit-button" onClick={this.handleClick}>Edit Profile</button>
+              <button className="delete-button"onClick={this.handleDelete}>Delete</button>
+            </div>
+            </>
+          }
+          
+        </div>
       </div>
     );
   }
