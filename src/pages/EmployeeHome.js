@@ -170,7 +170,7 @@ class EmployeeHome extends Component {
         return (
           <div id="employee-calendar">
             <div className="title title-row">
-              <h2 className='employee-h2'>Calendar <br/> {username}</h2>
+              <h2 className='employee-h2'>{username}'s <br/> Calendar</h2>
             </div>
             <button onClick={this.countDown}><FontAwesomeIcon icon="caret-square-left" /></button>
             <Moment format="dddd, DD/MM/YYYY">{this.state.formatDate}</Moment>
