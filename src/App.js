@@ -10,14 +10,11 @@ import Login from './pages/Login';
 import AuthProvider from './providers/AuthProvider';
 import ConditionalHome from './components/ConditionalHome';
 import ConditionalFooter from './components/ConditionalFooter';
-
 import ConditionalUser from './components/ConditionalUser';
 import NewEmployee from './pages/NewEmployee';
 import EmployeeCalendar from './pages/EmployeeCalendar';
 import EmployeeProfile from './components/EmployeeProfile';
-
 import { library } from '@fortawesome/fontawesome-svg-core'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretSquareLeft, faCaretSquareRight, faHome, faCalendarAlt, faUserAlt, faUser, faClipboardList, faPhone, faUserPlus, faBusinessTime, faUserClock} from '@fortawesome/free-solid-svg-icons'
 
 library.add(faCaretSquareLeft, faCaretSquareRight, faHome, faCalendarAlt, faUserAlt, faUser,faClipboardList, faPhone, faUserPlus, faBusinessTime, faUserClock)
