@@ -59,18 +59,18 @@ class CreateEmployeeDataForm extends Component {
     return true;
   }
 
-  onClick = (event) => {
-    if (this.isEmpty(this.state[event.target.name])) {
-      this.setState({
-        [event.target.name]: event.target.value,
-      })
+  // onClick = (event) => {
+  //   if (this.isEmpty(this.state[event.target.name])) {
+  //     this.setState({
+  //       [event.target.name]: event.target.value,
+  //     })
 
-    } else {
-      this.setState({
-        [event.target.name]: {},
-      })
-    }
-  }
+  //   } else {
+  //     this.setState({
+  //       [event.target.name]: {},
+  //     })
+  //   }
+  // }
   onClickMonday = (event) => {
     if (this.isEmpty(this.state[event.target.name])) {
       this.setState({
@@ -164,16 +164,6 @@ class CreateEmployeeDataForm extends Component {
       })
     }
   }
-
-
-
-  // renderTime = (day) => {
-  //   return <>
-  //     From: <input type="time" onChange={this.handleChangeTime} name={`${day}.initHour`} value={day.initHour}></input>
-  //     to: <input type="time" onChange={this.handleChangeTime} name={`${day}.endHour`} value={day.endHour}></input>
-  //   </>
-  // }
-
 
   // -----------
   handleSubmit = (event) => {

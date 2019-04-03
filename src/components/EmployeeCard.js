@@ -31,20 +31,24 @@ class EmployeeCard extends Component {
   }
 
   render() {
-    const { username, lastname, _id, isWorkingToday, stillWorking, beforeWork, phone } = this.props.data;
+    const { username, lastname, _id, isWorkingToday, stillWorking, beforeWork, phone, imageUrl } = this.props.data;
     return (
       <div className="card-container">
         <li className="card">
           {/* Div Imagen */}
           <div className='div-imagen'>
             <Link to={`/calendar/${_id}`} >
-              <FontAwesomeIcon icon="user" className="icon-card" />
+              <div>
+
+                <img className="img-container" src={imageUrl} alt={username} />
+              </div>
+              {/* <FontAwesomeIcon icon="user" className="icon-card" /> */}
             </Link>
             <h2>{username}</h2>
             <h2>{lastname}</h2>
 
           </div>
-          
+
           {/* div contenido */}
           <div className="div-container">
             {/* div superior */}
