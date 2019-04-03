@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import employeeService from '../services/employeeServices';
+import PhotoUpload from '../components/PhotoUpload';
 
 class EmployeeDataForm extends Component {
 
@@ -11,6 +12,7 @@ class EmployeeDataForm extends Component {
     phone: this.props.employee.phone,
     address: this.props.employee.address,
     email: this.props.employee.email,
+    imageUrl:'',
     //week
     mondayIsClicked:'',
     tuesdayIsClicked:'',
@@ -241,6 +243,12 @@ class EmployeeDataForm extends Component {
     })
   }
 
+  handleUpload = (url) => {
+    this.setState({
+      ImageUrl: url,
+    })
+  }
+
   handleChangeTime = (event) => {
     const day = event.target.name.substring(0, event.target.name.indexOf('.'))
     const hour = event.target.name.substring(event.target.name.indexOf('.') + 1, event.target.name.length)
@@ -260,6 +268,7 @@ class EmployeeDataForm extends Component {
         <form onSubmit={this.handleSubmit} className="employee-form">
           <div className="title-row">
             <h2 className='employee-h2'>Edit <br /> Employee</h2>
+            <PhotoUpload onUploading={this.handleUpload}/>
             <button className="edit-button" type="submit">Edit</button>
           </div>
           <input className="input-employee" placeholder="Username..." onChange={this.handleChange} value={this.state.username} name="username" type="text" />
@@ -376,38 +385,8 @@ class EmployeeDataForm extends Component {
             </div>
             <br />
           </div>
-          {/* <fieldset>
-            <legend>Schedule</legend>
-            <input onClick={this.onClick} type="checkbox" name="monday" value="monday" /><label>Monday</label><br />
-            From: <input type="time" onChange={this.handleChangeTime} name="monday.initHour" value={monday.initHour}></input>
-            to: <input type="time" onChange={this.handleChangeTime} name="monday.endHour" value={monday.endHour}></input>
-            <br />
-            <input onClick={this.onClick} type="checkbox" name="tuesday" value="tuesday" /><label>Tuesday</label><br />
-            From: <input type="time" onChange={this.handleChangeTime} name="tuesday.initHour" value={tuesday.initHour}></input>
-            to: <input type="time" onChange={this.handleChangeTime} name="tuesday.endHour" value={tuesday.endHour}></input>
-            <br />
-            <input onClick={this.onClick} type="checkbox" name="wednesday" value="wednesday" /><label>Wednesday</label><br />
-            From: <input type="time" onChange={this.handleChangeTime} name="wednesday.initHour" value={wednesday.initHour}></input>
-            to: <input type="time" onChange={this.handleChangeTime} name="wednesday.endHour" value={wednesday.endHour}></input>
-            <br />
-            <input onClick={this.onClick} type="checkbox" name="thursday" value="thursday" /><label>Thursday</label><br />
-            From: <input type="time" onChange={this.handleChangeTime} name="thursday.initHour" value={thursday.initHour}></input>
-            to: <input type="time" onChange={this.handleChangeTime} name="thursday.endHour" value={thursday.endHour}></input>
-            <br />
-            <input onClick={this.onClick} type="checkbox" name="friday" value="friday" /><label>Friday</label><br />
-            From: <input type="time" onChange={this.handleChangeTime} name="friday.initHour" value={friday.initHour}></input>
-            to: <input type="time" onChange={this.handleChangeTime} name="friday.endHour" value={friday.endHour}></input>
-            <br />
-            <input onClick={this.onClick} type="checkbox" name="saturday" value="saturday" /><label>Saturday</label><br />
-            From: <input type="time" onChange={this.handleChangeTime} name="saturday.initHour" value={saturday.initHour}></input>
-            to: <input type="time" onChange={this.handleChangeTime} name="saturday.endHour" value={saturday.endHour}></input>
-            <br />
-            <input onClick={this.onClick} type="checkbox" name="sunday" value="sunday" /><label>Sunday</label><br />
-            From: <input type="time" onChange={this.handleChangeTime} name="sunday.initHour" value={sunday.initHour}></input>
-            to: <input type="time" onChange={this.handleChangeTime} name="sunday.endHour" value={sunday.endHour}></input>
-            <br />
-          </fieldset> */}
           {this.state.error && <p>{this.state.error}</p>}
+          
         </form>
       </div>
     );

@@ -48,7 +48,7 @@ class EmployeeProfile extends Component {
   }
 
   render() {
-    const {username, lastname, dni, address, phone, email} = this.state.data;
+    const {username, lastname, dni, address, phone, email, imageUrl} = this.state.data;
     return (
       <div id="profile">
         <div className="container-employee-form-profile">
