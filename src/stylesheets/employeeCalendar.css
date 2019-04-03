@@ -23,6 +23,9 @@
 
 .day-selector {
   margin:15px 0 5px 0;
+  width: 80vw;
+  display: flex;
+  justify-content: space-between;
 }
 
 .day-selector button{
