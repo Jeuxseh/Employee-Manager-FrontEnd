@@ -15,22 +15,22 @@ class EmployeesList extends Component {
     this.getAllEmployees();
     this.sortEmployees(this.state.employees)
   }
- 
+
 
   getAllEmployees = () => {
     setTimeout(this.getAllEmployees, 20000);
     employeeServices.getAll()
       .then(data => {
-       
 
-        data.forEach((employee,index) => {
-          this.compareDay(employee,index)
+
+        data.forEach((employee, index) => {
+          this.compareDay(employee, index)
         })
 
         const newData = this.sortEmployees(data);
 
         this.setState({
-          data:newData, 
+          data: newData,
         })
 
 
@@ -39,28 +39,28 @@ class EmployeesList extends Component {
   }
 
   sortEmployees = (employees) => {
-    const newData = employees.sort((x,y) => {
-      if(x.stillWorking === true && y.stillWorking !== true){
+    const newData = employees.sort((x, y) => {
+      if (x.stillWorking === true && y.stillWorking !== true) {
         return -1;
       }
 
-      if(x.stillWorking !== true && y.stillWorking === true){
+      if (x.stillWorking !== true && y.stillWorking === true) {
         return 1;
       }
-      
-      if(x.stillWorking === true && y.stillWorking === true){
+
+      if (x.stillWorking === true && y.stillWorking === true) {
         return 0;
       }
 
-      if(x.isWorkingToday === true && y.isWorkingToday !== true){
+      if (x.isWorkingToday === true && y.isWorkingToday !== true) {
         return -1;
       }
 
-      if(x.isWorkingToday !== true && y.isWorkingToday === true){
+      if (x.isWorkingToday !== true && y.isWorkingToday === true) {
         return 1;
       }
 
-      if(x.isWorkingToday !== true && y.isWorkingToday !== true){
+      if (x.isWorkingToday !== true && y.isWorkingToday !== true) {
         return 0;
       }
 
@@ -69,7 +69,7 @@ class EmployeesList extends Component {
     return newData;
   }
 
-  compareDay = (employee,index) => {
+  compareDay = (employee, index) => {
     var currentDate = new Date();
     var day = currentDate.toString().substr(0, 3).toLocaleLowerCase();
     const currentTime = currentDate.toString().substr(15, 16).split(':').map(timer => parseInt(timer)).splice(0, 2)
@@ -84,20 +84,28 @@ class EmployeesList extends Component {
             || (currentTime[0] < finishHour[0]))) {
           employee.stillWorking = true
         }
+        if (((currentTime[0] === initialHour[0] && currentTime[1] <= initialHour[1])
+          || currentTime[0] < initialHour[0])) {
+          employee.beforeWork = true;
+        } 
+        if (((currentTime[0] === finishHour[0] && currentTime[1] >= finishHour[1])
+        || currentTime[0] > finishHour[0])) {
+          employee.afterWork = true;
+        }
       }
     }
   }
 
   render() {
     return (
-        <ul className="card-ul">
-          {this.state.data.map(employee => (
-            <EmployeeCard 
+      <ul className="card-ul">
+        {this.state.data.map(employee => (
+          <EmployeeCard
             key={employee._id}
             data={employee}
-            />
-          ))}
-        </ul>
+          />
+        ))}
+      </ul>
     );
   }
 }
