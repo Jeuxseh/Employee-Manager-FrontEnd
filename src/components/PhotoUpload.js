@@ -37,14 +37,14 @@ class ProfilePage extends Component {
   render() {
     return (
       <div>
-        <form>
+        <form className="buttons-container">
           {this.state.isUploading &&
             <p>Progress: {this.state.progress}</p>
           }
-          {this.state.avatarURL &&
+          {/* {this.state.avatarURL &&
             <img src={this.state.avatarURL} alt="uploading" />
-          }
-          <label style={{ backgroundColor: 'steelblue', color: 'white', padding: 10, borderRadius: 4, cursor: "pointer" }}>
+          } */}
+          <label class="edit-button">
             Upload Image
             <FileUploader
               hidden

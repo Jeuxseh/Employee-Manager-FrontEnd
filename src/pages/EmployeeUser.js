@@ -68,10 +68,9 @@ class User extends Component {
               </div>
               <div className="buttons-container">
                 {editing ?
-
                   <>
                     <PhotoUpload onUploading={this.handleUpload} />
-                    <button className="confirm-button" onClick={this.handleSubmit}>Confirm</button>
+                    <button className="button-confirm" onClick={this.handleSubmit}>Confirm</button>
                   </> : <button className="edit-button" onClick={this.handleClick}>Edit</button>
 
                 }
