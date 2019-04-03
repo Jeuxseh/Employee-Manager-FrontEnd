@@ -55,28 +55,28 @@ class User extends Component {
         return "Is Loading...";
       case false:
         return (
-          <div>
-
-            <div className="container-employee-form">
-              <div className="employee-form">
-                <div className="title-row">
-                  <h2 className="employee-h2">My profile</h2>
-                  <img src={`${imageUrl}`} alt="imageProfile" />
-                </div>
-                <h3 className="input-employee">Username: <span className="span-forms">{username}</span></h3>
-                <h3 className="input-employee">Lastname: <span className="span-forms">{lastname}</span></h3>
-                <h3 className="input-employee">Email: <span className="span-forms">{email}</span></h3>
-                <h3 className="input-employee">Phone: <span className="span-forms">{phone}</span></h3>
-                <h3 className="input-employee">Address: <span className="span-forms">{address}</span></h3>
+          <div id="profile">
+            <div className="container-employee-form-profile">
+              <img src={`${imageUrl}`} alt="imageProfile" className="image-employee" />
+              <h2 className='employee-h2'>{username} <span>' s Profile</span></h2>
+              <div className="fields">
+                <h2>Username: <span>{username}</span></h2>
+                <h2>Lastname: <span>{lastname}</span></h2>
+                <h2>Email: <span>{email}</span></h2>
+                <h2>Phone: <span>{phone}</span></h2>
+                <h2>Address: <span>{address}</span></h2>
+              </div>
+              <div className="buttons-container">
                 {editing ?
+
                   <>
                     <PhotoUpload onUploading={this.handleUpload} />
                     <button className="confirm-button" onClick={this.handleSubmit}>Confirm</button>
                   </> : <button className="edit-button" onClick={this.handleClick}>Edit</button>
+
                 }
               </div>
             </div>
-
           </div>
         );
       default:

@@ -59,7 +59,6 @@ class CreateEmployeeDataForm extends Component {
     return true;
   }
 
-
   onClickMonday = (event) => {
     if (this.isEmpty(this.state[event.target.name])) {
       this.setState({

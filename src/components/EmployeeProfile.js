@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import employeeService from '../services/employeeServices'
 import EditEmployeeDataForm from './EditEmployeeDataForm';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class EmployeeProfile extends Component {
 
@@ -24,7 +23,7 @@ class EmployeeProfile extends Component {
   }
 
   handleDelete = () => {
-    const {id} = this.props.match.params;
+    const { id } = this.props.match.params;
     employeeService.deleteEmployee(id)
       .then(() => {
         this.props.history.push('/');
@@ -32,14 +31,14 @@ class EmployeeProfile extends Component {
       .catch(err => console.log(err));
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.getOneEmployee()
   }
 
   getOneEmployee = () => {
-    const {id} = this.props.match.params;
+    const { id } = this.props.match.params;
     employeeService.getEmployee(id)
-      .then(data=> {
+      .then(data => {
         this.setState({
           data
         })
@@ -48,31 +47,34 @@ class EmployeeProfile extends Component {
   }
 
   render() {
-    const {username, lastname, dni, address, phone, email, imageUrl} = this.state.data;
+    const { username, lastname, dni, address, phone, email, imageUrl } = this.state.data;
     return (
       <div id="profile">
         <div className="container-employee-form-profile">
-          {this.state.editing && <EditEmployeeDataForm onSubmit={this.handleUpdate} employee={this.state.data}/>}
-          {!this.state.editing && 
+          {this.state.editing && <EditEmployeeDataForm onSubmit={this.handleUpdate} employee={this.state.data} />}
+          {!this.state.editing &&
             <>
-            
-            <FontAwesomeIcon icon="user" className="image-employee" />
-            <h2 className='employee-h2'>{username} <span>' s Profile</span></h2>
-            <div className="fields">
-              <h2>Name: <span>{username}</span></h2>
-              <h2>Lastname: <span> {lastname}</span></h2>
-              <h2>DNI: <span> {dni}</span></h2>
-              <h2>Adress: <span> {address}</span></h2>
-              <h2>Phone: <span> {phone}</span></h2>
-              <h2>Email: <span> {email}</span></h2>
-            </div>
-            <div className="buttons-container">
-              <button className="edit-button" onClick={this.handleClick}>Edit Profile</button>
-              <button className="delete-button"onClick={this.handleDelete}><FontAwesomeIcon icon="user-slash" /></button>
-            </div>
+              <div className="employee-image">
+
+                {/* <FontAwesomeIcon icon="user" className="image-employee" /> */}
+                <img src={imageUrl} alt="profile" />
+              </div>
+              <h2 className='employee-h2'>{username} <span>' s Profile</span></h2>
+              <div className="fields">
+                <h2>Name: <span>{username}</span></h2>
+                <h2>Lastname: <span> {lastname}</span></h2>
+                <h2>DNI: <span> {dni}</span></h2>
+                <h2>Adress: <span> {address}</span></h2>
+                <h2>Phone: <span> {phone}</span></h2>
+                <h2>Email: <span> {email}</span></h2>
+              </div>
+              <div className="buttons-container">
+                <button className="edit-button" onClick={this.handleClick}>Edit Profile</button>
+                <button className="delete-button" onClick={this.handleDelete}>Delete</button>
+              </div>
             </>
           }
-          
+
         </div>
       </div>
     );
