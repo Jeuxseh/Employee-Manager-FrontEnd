@@ -42,7 +42,6 @@ class EmployeeCard extends Component {
 
                 <img className="img-container" src={imageUrl} alt={username} />
               </div>
-              {/* <FontAwesomeIcon icon="user" className="icon-card" /> */}
             </Link>
             <h2>{username}</h2>
             <h2>{lastname}</h2>
