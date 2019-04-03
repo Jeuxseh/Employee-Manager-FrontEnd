@@ -59,6 +59,7 @@ class CreateEmployeeDataForm extends Component {
     return true;
   }
 
+<<<<<<< HEAD
   // onClick = (event) => {
   //   if (this.isEmpty(this.state[event.target.name])) {
   //     this.setState({
@@ -71,16 +72,27 @@ class CreateEmployeeDataForm extends Component {
   //     })
   //   }
   // }
+=======
+
+>>>>>>> c83de62ad85d3a7ef3c4a3402ead0bc91d833273
   onClickMonday = (event) => {
     if (this.isEmpty(this.state[event.target.name])) {
       this.setState({
         [event.target.name]: event.target.value,
         mondayIsClicked: true,
+        
       })
     } else {
       this.setState({
         [event.target.name]: {},
         mondayIsClicked: false,
+        schedule: {
+          ...this.state.schedule,
+          monday: {
+            initHour: '',
+            endHour: ''
+          },
+        } 
       })
     }
   }
@@ -95,6 +107,13 @@ class CreateEmployeeDataForm extends Component {
       this.setState({
         [event.target.name]: {},
         tuesdayIsClicked: false,
+        schedule: {
+          ...this.state.schedule,
+          tuesday: {
+            initHour: '',
+            endHour: ''
+          },
+        } 
       })
     }
   }
@@ -109,6 +128,13 @@ class CreateEmployeeDataForm extends Component {
       this.setState({
         [event.target.name]: {},
         wednesdayIsClicked: false,
+        schedule: {
+          ...this.state.schedule,
+          wednesday: {
+            initHour: '',
+            endHour: ''
+          },
+        } 
       })
     }
   }
@@ -122,6 +148,13 @@ class CreateEmployeeDataForm extends Component {
       this.setState({
         [event.target.name]: {},
         thursdayIsClicked: false,
+        schedule: {
+          ...this.state.schedule,
+          thursday: {
+            initHour: '',
+            endHour: ''
+          },
+        } 
       })
     }
   }
@@ -135,6 +168,13 @@ class CreateEmployeeDataForm extends Component {
       this.setState({
         [event.target.name]: {},
         fridayIsClicked: false,
+        schedule: {
+          ...this.state.schedule,
+          friday: {
+            initHour: '',
+            endHour: ''
+          },
+        } 
       })
     }
   }
@@ -148,6 +188,13 @@ class CreateEmployeeDataForm extends Component {
       this.setState({
         [event.target.name]: {},
         saturdayIsClicked: false,
+        schedule: {
+          ...this.state.schedule,
+          saturday: {
+            initHour: '',
+            endHour: ''
+          },
+        } 
       })
     }
   }
@@ -161,60 +208,26 @@ class CreateEmployeeDataForm extends Component {
       this.setState({
         [event.target.name]: {},
         sundayIsClicked: false,
+        schedule: {
+          ...this.state.schedule,
+          sunday: {
+            initHour: '',
+            endHour: ''
+          },
+        } 
       })
     }
   }
 
   // -----------
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> c83de62ad85d3a7ef3c4a3402ead0bc91d833273
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.onSubmit(this.state);
-    this.setState({
-      username: '',
-      lastname: '',
-      dni: '',
-      password: '',
-      phone: '',
-      address: '',
-      email: '',
-      mondayIsClicked: false,
-      tuesdayIsClicked: false,
-      wednesdayIsClicked: false,
-      thursdayIsClicked: false,
-      fridayIsClicked: false,
-      saturdayIsClicked: false,
-      sundayIsClicked: false,
-      schedule: {
-        monday: {
-          initHour: '',
-          endHour: '',
-        },
-        tuesday: {
-          initHour: '',
-          endHour: '',
-        },
-        wednesday: {
-          initHour: '',
-          endHour: '',
-        },
-        thursday: {
-          initHour: '',
-          endHour: '',
-        },
-        friday: {
-          initHour: '',
-          endHour: '',
-        },
-        saturday: {
-          initHour: '',
-          endHour: '',
-        },
-        sunday: {
-          initHour: '',
-          endHour: '',
-        }
-      }
-    });
   }
   handleChange = (event) => {
     this.setState({
@@ -247,7 +260,7 @@ class CreateEmployeeDataForm extends Component {
             <input className="input-employee" placeholder="Dni..." onChange={this.handleChange} value={this.state.dni} name="dni" type="text" />
             <input className="input-employee" placeholder="Address..." onChange={this.handleChange} value={this.state.address} name="address" type="text" />
             <input className="input-employee" placeholder="Email..." onChange={this.handleChange} value={this.state.email} name="email" type="email" />
-          
+
           <div className="schedule-container">
             <div className="day-hour">
               <div>
@@ -260,11 +273,11 @@ class CreateEmployeeDataForm extends Component {
                     to:  <input className="input-time" type="time" onChange={this.handleChangeTime} name="monday.endHour" value={monday.endHour}></input>
                   </>
                 }
-              </div>  
+              </div>
             </div>
             <br />
 
-            
+
             <div className="day-hour">
               <div>
                 <input className="input-checkbox" onClick={this.onClickTuesday} type="checkbox" name="tuesday" value="tuesday" /><label className="day-label">Tue </label>
@@ -276,7 +289,7 @@ class CreateEmployeeDataForm extends Component {
                     to: <input className="input-time" type="time" onChange={this.handleChangeTime} name="tuesday.endHour" value={tuesday.endHour}></input>
                   </>
                 }
-              </div>  
+              </div>
             </div>
 
             <br />
@@ -291,7 +304,7 @@ class CreateEmployeeDataForm extends Component {
                     to: <input className="input-time" type="time" onChange={this.handleChangeTime} name="wednesday.endHour" value={wednesday.endHour}></input>
                   </>
                 }
-              </div>  
+              </div>
             </div>
             <br />
 
@@ -306,7 +319,7 @@ class CreateEmployeeDataForm extends Component {
                     to: <input className="input-time" type="time" onChange={this.handleChangeTime} name="thursday.endHour" value={thursday.endHour}></input>
                   </>
                 }
-              </div>  
+              </div>
             </div>
             <br />
 
@@ -321,10 +334,10 @@ class CreateEmployeeDataForm extends Component {
                     to: <input className="input-time" type="time" onChange={this.handleChangeTime} name="friday.endHour" value={friday.endHour}></input>
                   </>
                 }
-              </div>  
+              </div>
             </div>
             <br />
-            
+
             <div className="day-hour">
               <div>
                 <input className="input-checkbox" onClick={this.onClickSaturday} type="checkbox" name="saturday" value="saturday" /><label className="day-label">Sat </label>
@@ -355,7 +368,7 @@ class CreateEmployeeDataForm extends Component {
             </div>
             <br />
           </div>
-        </form> 
+        </form>
       </div>
     );
   }

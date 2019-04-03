@@ -13,43 +13,51 @@ class ProfilePage extends Component {
   };
 
   handleChangeUsername = (event) => this.setState({ username: event.target.value });
-  
+
   handleUploadStart = () => this.setState({ isUploading: true, progress: 0 });
-  
+
   handleProgress = (progress) => this.setState({ progress });
-  
+
   handleUploadError = (error) => {
     this.setState({ isUploading: false });
     console.error(error);
   }
-  
+
   handleUploadSuccess = (filename) => {
     this.setState({ avatar: filename, progress: 100, isUploading: false });
-    firebase.storage().ref('images').child(filename).getDownloadURL().then(url => this.setState({ avatarURL: url }));
+    firebase.storage().ref('images').child(filename).getDownloadURL()
+      .then((url) => {
+        this.setState({
+          avatarURL: url
+        })
+        this.props.onUploading(url);  
+      }
+      );
   };
   render() {
     return (
       <div>
         <form>
-          <label>Username:</label>
-          <input type="text" value={this.state.username} name="username" onChange={this.handleChangeUsername} />
-          <label>Avatar:</label>
           {this.state.isUploading &&
             <p>Progress: {this.state.progress}</p>
           }
           {this.state.avatarURL &&
-            <img src={this.state.avatarURL} alt="uploading"/>
+            <img src={this.state.avatarURL} alt="uploading" />
           }
-          <FileUploader
-            accept="image/*"
-            name="avatar"
-            randomizeFilename
-            storageRef={firebase.storage().ref('images')}
-            onUploadStart={this.handleUploadStart}
-            onUploadError={this.handleUploadError}
-            onUploadSuccess={this.handleUploadSuccess}
-            onProgress={this.handleProgress}
-          />
+          <label style={{ backgroundColor: 'steelblue', color: 'white', padding: 10, borderRadius: 4, cursor: "pointer" }}>
+            Upload Image
+            <FileUploader
+              hidden
+              accept="image/*"
+              name="avatar"
+              randomizeFilename
+              storageRef={firebase.storage().ref('images')}
+              onUploadStart={this.handleUploadStart}
+              onUploadError={this.handleUploadError}
+              onUploadSuccess={this.handleUploadSuccess}
+              onProgress={this.handleProgress}
+            />
+          </label>
         </form>
       </div>
 

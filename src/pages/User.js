@@ -38,7 +38,7 @@ class User extends Component {
 
   render() {
     const { isLoading } = this.state;
-    const { username, email, phone, address, company } = this.state.data;
+    const { email, phone, address, company, imageUrl } = this.state.data;
 
     switch (isLoading) {
       case true:
@@ -51,6 +51,7 @@ class User extends Component {
                 <div className="employee-form">
                   <div className="title-row">
                     <h2 className="employee-h2">My profile</h2>
+                    <img src={`${imageUrl}`} alt="profileImage"/>
                   </div>
                   <h3 className="input-user">Email: <span className="span-forms">{email}</span></h3>
                   <h3 className="input-user">Company: <span className="span-forms">{company}</span></h3>

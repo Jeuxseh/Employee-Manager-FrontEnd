@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import employeeService from '../services/employeeServices';
+import PhotoUpload from '../components/PhotoUpload';
 
 class EmployeeDataForm extends Component {
 
@@ -11,14 +12,15 @@ class EmployeeDataForm extends Component {
     phone: this.props.employee.phone,
     address: this.props.employee.address,
     email: this.props.employee.email,
+    imageUrl:'',
     //week
-    mondayIsClicked: this.props.employee.mondayIsClicked,
-    tuesdayIsClicked: this.props.employee.tuesdayIsClicked,
-    wednesdayIsClicked: this.props.employee.wednesdayIsClicked,
-    thursdayIsClicked: this.props.employee.thursdayIsClicked,
-    fridayIsClicked: this.props.employee.fridayIsClicked,
-    saturdayIsClicked: this.props.employee.saturdayIsClicked,
-    sundayIsClicked: this.props.employee.sundayIsClicked,
+    mondayIsClicked:'',
+    tuesdayIsClicked:'',
+    wednesdayIsClicked:'',
+    thursdayIsClicked:'',
+    fridayIsClicked:'',
+    saturdayIsClicked:'',
+    sundayIsClicked:'',
     schedule: {
       monday: {
         initHour: this.props.employee.schedule.monday.initHour,
@@ -60,28 +62,36 @@ class EmployeeDataForm extends Component {
     return true;
   }
 
-  onClick = (event) => {
-    if (this.isEmpty(this.state[event.target.name])) {
-      this.setState({
-        [event.target.name]: event.target.value,
-      })
+  // onClick = (event) => {
+  //   if (this.isEmpty(this.state[event.target.name])) {
+  //     this.setState({
+  //       [event.target.name]: event.target.value,
+  //     })
 
-    } else {
-      this.setState({
-        [event.target.name]: {},
-      })
-    }
-  }
+  //   } else {
+  //     this.setState({
+  //       [event.target.name]: {},
+  //     })
+  //   }
+  // }
   onClickMonday = (event) => {
     if (this.isEmpty(this.state[event.target.name])) {
       this.setState({
         [event.target.name]: event.target.value,
         mondayIsClicked: true,
+        
       })
     } else {
       this.setState({
         [event.target.name]: {},
         mondayIsClicked: false,
+        schedule: {mondayIsClicked: false,
+          ...this.state.schedule,
+          monday: {
+            initHour: '',
+            endHour: ''
+          },
+        } 
       })
     }
   }
@@ -96,6 +106,13 @@ class EmployeeDataForm extends Component {
       this.setState({
         [event.target.name]: {},
         tuesdayIsClicked: false,
+        schedule: {
+          ...this.state.schedule,
+          tuesday: {
+            initHour: '',
+            endHour: ''
+          },
+        } 
       })
     }
   }
@@ -110,6 +127,13 @@ class EmployeeDataForm extends Component {
       this.setState({
         [event.target.name]: {},
         wednesdayIsClicked: false,
+        schedule: {
+          ...this.state.schedule,
+          wednesday: {
+            initHour: '',
+            endHour: ''
+          },
+        } 
       })
     }
   }
@@ -123,6 +147,13 @@ class EmployeeDataForm extends Component {
       this.setState({
         [event.target.name]: {},
         thursdayIsClicked: false,
+        schedule: {
+          ...this.state.schedule,
+          thursday: {
+            initHour: '',
+            endHour: ''
+          },
+        } 
       })
     }
   }
@@ -136,6 +167,13 @@ class EmployeeDataForm extends Component {
       this.setState({
         [event.target.name]: {},
         fridayIsClicked: false,
+        schedule: {
+          ...this.state.schedule,
+          friday: {
+            initHour: '',
+            endHour: ''
+          },
+        } 
       })
     }
   }
@@ -149,6 +187,13 @@ class EmployeeDataForm extends Component {
       this.setState({
         [event.target.name]: {},
         saturdayIsClicked: false,
+        schedule: {
+          ...this.state.schedule,
+          saturday: {
+            initHour: '',
+            endHour: ''
+          },
+        } 
       })
     }
   }
@@ -162,6 +207,13 @@ class EmployeeDataForm extends Component {
       this.setState({
         [event.target.name]: {},
         sundayIsClicked: false,
+        schedule: {
+          ...this.state.schedule,
+          sunday: {
+            initHour: '',
+            endHour: ''
+          },
+        } 
       })
     }
   }
@@ -191,6 +243,12 @@ class EmployeeDataForm extends Component {
     })
   }
 
+  handleUpload = (url) => {
+    this.setState({
+      ImageUrl: url,
+    })
+  }
+
   handleChangeTime = (event) => {
     const day = event.target.name.substring(0, event.target.name.indexOf('.'))
     const hour = event.target.name.substring(event.target.name.indexOf('.') + 1, event.target.name.length)
@@ -203,12 +261,14 @@ class EmployeeDataForm extends Component {
   }
 
   render() {
+    console.log(this.state);
     const { monday, tuesday, wednesday, thursday, friday, saturday, sunday } = this.state.schedule;
     return (
       <div className="container-employee-form">
         <form onSubmit={this.handleSubmit} className="employee-form">
           <div className="title-row">
             <h2 className='employee-h2'>Edit <br /> Employee</h2>
+            <PhotoUpload onUploading={this.handleUpload}/>
             <button className="edit-button" type="submit">Edit</button>
           </div>
           <input className="input-employee" placeholder="Username..." onChange={this.handleChange} value={this.state.username} name="username" type="text" />
@@ -222,12 +282,7 @@ class EmployeeDataForm extends Component {
               <div>
                 <input className="input-checkbox" onClick={this.onClickMonday} type="checkbox" name="monday" value="monday" /><label className="day-label">Mon</label>
               </div>
-              {/* {monday.initHour !== '' &&
-                <>
-                  <input className="input-time" type="time" onChange={this.handleChangeTime} name="monday.initHour" value={monday.initHour}></input>
-                  to:  <input className="input-time" type="time" onChange={this.handleChangeTime} name="monday.endHour" value={monday.endHour}></input>
-                </>
-              }: */}
+
               <div className="hour">
                 {this.state.mondayIsClicked &&
                   <>
@@ -330,8 +385,12 @@ class EmployeeDataForm extends Component {
             </div>
             <br />
           </div>
+<<<<<<< HEAD
           
+=======
+>>>>>>> c83de62ad85d3a7ef3c4a3402ead0bc91d833273
           {this.state.error && <p>{this.state.error}</p>}
+          
         </form>
       </div>
     );
