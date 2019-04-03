@@ -74,12 +74,15 @@
 }
 
 .icon-card {
-  background-color: rgb(103, 58, 183, 1);
-  border-radius: 10px;
-  font-size: 80px;
-  margin-bottom: 6px;
-  padding-top: 5px;
-  color: rgb(255, 255, 255, 0.6);
+      border-radius: 10px;
+      font-size: 80px;
+      margin-top: 0%;
+      margin-bottom: 6px;
+      margin-left: 16%;
+      padding-top: 5px;
+      color: rgb(255, 255, 255, 0.6);
+      width: 70%;
+      height: 83%;
 }
 
 .icon-info {
