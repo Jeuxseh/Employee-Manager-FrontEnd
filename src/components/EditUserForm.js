@@ -13,7 +13,7 @@ class EditUserForm extends Component {
     address: this.props.admin.address,
     email: this.props.admin.email,
     company: this.props.admin.company,
-    imageUrl:'',
+    imageUrl: '',
   }
 
   handleSubmit = (event) => {
@@ -44,7 +44,7 @@ class EditUserForm extends Component {
 
   handleUpload = (url) => {
     this.setState({
-      imageUrl:url,
+      imageUrl: url,
     })
   }
 
@@ -55,14 +55,16 @@ class EditUserForm extends Component {
         <form className="employee-form" onSubmit={this.handleSubmit}>
           <div className="title-row">
             <h2 className="employee-h2">My profile</h2>
-            <PhotoUpload onUploading={this.handleUpload}/>
           </div>
           <h3 className="input-user">Email: <input className="box-form" placeholder="email..." onChange={this.handleChange} value={this.state.email} name="email" type="email" /></h3>
           <h3 className="input-user">Company: <input className="box-form" placeholder="company..." onChange={this.handleChange} value={this.state.company} name="company" type="text" /></h3>
           <h3 className="input-user">Phone: <input className="box-form" placeholder="phone..." onChange={this.handleChange} value={this.state.phone} name="phone" type="number" /></h3>
           <h3 className="input-user">Address: <input className="box-form" placeholder="address..." onChange={this.handleChange} value={this.state.address} name="address" type="text" /></h3>
+          <div className="div-uploadfile-user">
+            {this.state.error && <p className="p-error-profile">{this.state.error}</p>}
+          </div>
+          <PhotoUpload onUploading={this.handleUpload} />
           <button className="edit-button" type="submit">Confirm</button>
-          {this.state.error && <p>{this.state.error}</p>}
         </form>
       </div>
     );
