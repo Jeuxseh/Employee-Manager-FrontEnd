@@ -65,7 +65,7 @@ class Signup extends Component {
           <label>Email:</label>
           <input className="input-placeholder" type="email" name="email" value={email} onChange={this.handleChange} />
           
-          {this.state.error && <p>{this.state.error}</p>}
+          {this.state.error && <p className="p-error">{this.state.error}</p>}
 
           <input class="submitButton" type="submit" value="Signup" />
         </form>

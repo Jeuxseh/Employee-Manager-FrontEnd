@@ -37,10 +37,10 @@ class ProfilePage extends Component {
   render() {
     return (
       <div>
-        <form className="buttons-container">
           {this.state.isUploading &&
-            <p>Progress: {this.state.progress}</p>
+            <p className="p-upload">Progress: {this.state.progress}</p>
           }
+        <form className="buttons-container">
           {/* {this.state.avatarURL &&
             <img src={this.state.avatarURL} alt="uploading" />
           } */}
@@ -60,11 +60,8 @@ class ProfilePage extends Component {
           </label>
         </form>
       </div>
-
     );
-
   }
-
 }
 
 export default ProfilePage;

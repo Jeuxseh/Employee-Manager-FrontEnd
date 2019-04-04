@@ -43,7 +43,7 @@ class Login extends Component {
           <input className="input-placeholder" type="text" name="username" value={username} onChange={this.handleChange}/>
           <label>Password</label>
           <input className="input-placeholder" type="password" name="password" value={password} onChange={this.handleChange} />
-          {this.state.error && <p>{this.state.error}</p>}
+          {this.state.error && <p className="p-error">{this.state.error}</p>}
           <input class="submitButton" type="submit" value="Login"/>
         </form>
         <p>Don't have account?
