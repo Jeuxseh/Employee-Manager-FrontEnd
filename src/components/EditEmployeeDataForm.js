@@ -63,18 +63,6 @@ class EmployeeDataForm extends Component {
     return true;
   }
 
-  // onClick = (event) => {
-  //   if (this.isEmpty(this.state[event.target.name])) {
-  //     this.setState({
-  //       [event.target.name]: event.target.value,
-  //     })
-
-  //   } else {
-  //     this.setState({
-  //       [event.target.name]: {},
-  //     })
-  //   }
-  // }
   onClickMonday = (event) => {
     if (this.isEmpty(this.state[event.target.name])) {
       this.setState({
