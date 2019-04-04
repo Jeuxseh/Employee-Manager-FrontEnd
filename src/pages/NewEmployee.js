@@ -12,9 +12,7 @@ class NewEmployee extends Component {
   handleSubmit = (data) => {
     employeeService.createEmployee(data)
       .then((result) => {
-
         this.props.history.push("/");
-
       })
       .catch(error => {
         if (error.response.data.error) {

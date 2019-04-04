@@ -241,7 +241,6 @@ class CreateEmployeeDataForm extends Component {
             <input className="input-employee" placeholder="Dni..." onChange={this.handleChange} value={this.state.dni} name="dni" type="text" />
             <input className="input-employee" placeholder="Address..." onChange={this.handleChange} value={this.state.address} name="address" type="text" />
             <input className="input-employee" placeholder="Email..." onChange={this.handleChange} value={this.state.email} name="email" type="email" />
-
           <div className="schedule-container">
             <div className="day-hour">
               <div>
