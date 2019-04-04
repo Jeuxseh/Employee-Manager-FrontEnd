@@ -53,7 +53,8 @@
   text-transform: uppercase;
   color:rgba(0, 0, 0, 0.514);
   margin-bottom: 20px;
-  
+  margin-left: -4vh;
+  text-align: center;
 }
 
 .card-ul {
