@@ -347,3 +347,10 @@
 .edit-button-upload {
   margin-bottom: 1vh;
 }
+.admin-form {
+  /* margin-top: 2vh; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
