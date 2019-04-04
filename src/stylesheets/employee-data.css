@@ -139,9 +139,8 @@
   background-color: rgb(177, 54, 54, 0.5);
 }
 
-#edit-profile {
-  display: flex;
-  flex-direction: column;
+#edit-profile{
+  margin:0 15%;
 }
 
 /* -----     PROFILE END   ------- */
@@ -296,6 +295,18 @@
   width: auto;
   margin-right: 5px;
   margin-left: 10px;
+}
+
+
+
+.employee-image {
+  width: 20vw;
+  height: auto;
+}
+
+.employee-image img {
+  width: 20vw;
+  height: auto;
 }
 
 .button-confirm {

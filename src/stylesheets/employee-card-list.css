@@ -8,7 +8,7 @@ ul {
 #employee-status {
 
   background-color: rgba(103, 58, 183, 0.5);
-  background: linear-gradient(rgba(101, 153, 153, 0.5),rgba(244, 121, 31, 0.5)),url('../images/wallpaper_2_supergrey.jpeg');
+  background: linear-gradient(rgba(101, 153, 153, 0.5),rgba(244, 121, 31, 0.5));
   background-size: 400%;
   display: flex;
   flex-direction: column;
@@ -21,7 +21,8 @@ ul {
 
 .title{
 
-  margin-top:10vh;  
+  margin-top:10vh; 
+  color:white; 
 
 }
 

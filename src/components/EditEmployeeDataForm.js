@@ -13,7 +13,6 @@ class EmployeeDataForm extends Component {
     phone: this.props.employee.phone,
     address: this.props.employee.address,
     email: this.props.employee.email,
-    imageUrl:'',
     //week
     mondayIsClicked:'',
     tuesdayIsClicked:'',

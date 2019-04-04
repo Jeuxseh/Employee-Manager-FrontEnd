@@ -41,7 +41,7 @@ class EmployeesList extends Component {
       if (x.stillWorking !== true && y.stillWorking === true) {
         return 1;
       }
-
+      
       if (x.stillWorking === true && y.stillWorking === true) {
         return 0;
       }

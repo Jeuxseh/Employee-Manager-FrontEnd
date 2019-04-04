@@ -1,15 +1,28 @@
 .card-container {
-  height: 160px;
+  height: 150px;
   display: flex;
   flex-direction: column;
-  margin: 20px;
-  border-radius: 1.5vh;
-  box-shadow: 0px 0px 10px 1px rgba(10, 9, 10, 1);
-  background-color: rgb(255, 255, 255, 0.8)
+  margin: 10px 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 1px rgba(122, 121, 122, 0.5);
+  background-color: rgb(255, 255, 255, 0.4);
+  
 }
+
+.div-imagen {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
 .img-container{
   width: 60%;
-  margin-left:20%;
+  margin:9% 0 0 9%;
+  border:1px solid white;
+  border-radius:10px;
 }
 .card {
   display: flex;
@@ -29,33 +42,32 @@
 }
 
 .card p {
-  font-size: 12px;
+  font-size: 1.1em;
+  font-weight: bolder;
   text-align: center;
+  color:rgba(0, 0, 0, 0.6);
 }
 
 .card h2 {
-  font-size: 20px;
-  color: rgb(103, 58, 183);
+  font-size: 0.8em;
+  text-transform: uppercase;
+  color:rgba(0, 0, 0, 0.514);
+  margin-bottom: 20px;
+  
 }
 
 .card-ul {
-  width: 90%;
+  width: 95%;
   overflow: scroll;
+  margin-top:4vh;
   margin-bottom: 66px;
   list-style: none;
 }
 
 .div-container {
-  width: 100%
+  width: 80%;
 }
 
-.div-imagen {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 
 .div-top {
   margin-top: 5px;
@@ -63,6 +75,11 @@
   height: 30%;
   align-items: center;
 }
+
+.div-top p {
+
+}
+
 
 .div-mid {
   height: 30%;
@@ -89,7 +106,8 @@
 }
 
 .icon-info {
-  color: rgb(103, 58, 183, 1);
+  font-size: 1.2em;
+  color: rgb(131, 154, 158);
   margin-right: 10px;
 }
 
@@ -98,24 +116,24 @@
 }
 
 .red-box {
-  background-color: #F25C54;
-  border-radius: 0 1.5vh 1.5vh 0;
-  width: 20px;
-  height: 161px;
+  background-color: rgb(212, 106, 100,0.8);
+  margin:7px 7px;
+  width: 15px;
+  height: 135px;
 }
 
 .green-box {
-  background-color: #83B692;
-  border-radius: 0 1.5vh 1.5vh 0;
-  width: 20px;
-  height: 161px;
-}
+  background-color: rgb(126, 196, 147,0.8);
+  margin:7px 7px;
+  width: 15px;
+  height: 135px;
+} 
 
 .yellow-box {
-  border-radius: 0 1.5vh 1.5vh 0;
-  background-color: #F9DC5C;
-  width: 20px;
-  height: 161px;
+  background-color: rgb(250, 237, 119, 0.8);
+  margin:7px 7px;
+  width: 15px;
+  height: 135px;
 }
 
 .icon-userAdd {

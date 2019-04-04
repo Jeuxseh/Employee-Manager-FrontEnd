@@ -39,13 +39,11 @@ class EmployeeCard extends Component {
           <div className='div-imagen'>
             <Link to={`/calendar/${_id}`} >
               <div>
-
                 <img className="img-container" src={imageUrl} alt={username} />
               </div>
             </Link>
-            <h2>{username}</h2>
-            <h2>{lastname}</h2>
-
+            <h2 classname="name">{username} <br/> {lastname}</h2>
+          
           </div>
 
           {/* div contenido */}
