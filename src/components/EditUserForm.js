@@ -60,10 +60,15 @@ class EditUserForm extends Component {
           <h3 className="input-user">Company: <input className="box-form" placeholder="company..." onChange={this.handleChange} value={this.state.company} name="company" type="text" /></h3>
           <h3 className="input-user">Phone: <input className="box-form" placeholder="phone..." onChange={this.handleChange} value={this.state.phone} name="phone" type="number" /></h3>
           <h3 className="input-user">Address: <input className="box-form" placeholder="address..." onChange={this.handleChange} value={this.state.address} name="address" type="text" /></h3>
-          <div className="div-uploadfile-user">
-            {this.state.error && <p className="p-error-profile">{this.state.error}</p>}
+          <div>
+            {this.state.error && <p className="p-error">{this.state.error}</p>}
           </div>
+
+          <div className="edit-button-upload">
+
           <PhotoUpload onUploading={this.handleUpload} />
+          </div>
+          
           <button className="edit-button" type="submit">Confirm</button>
         </form>
       </div>

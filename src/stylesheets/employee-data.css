@@ -108,20 +108,20 @@
 
 #profie .button {
   font-size: 1.2em;
-  display:flex;
-  flex-direction:row;
+  display: flex;
+  flex-direction: row;
   justify-self: end;
   color: rgb(177, 54, 54);
-  border:1px solid rgb(177, 54, 54);
-  background-color:rgb(177, 54, 54,0.2);
+  border: 1px solid rgb(177, 54, 54);
+  background-color: rgb(177, 54, 54, 0.2);
 }
 
-#profile .edit-button{
-  margin:0px 30px;
-  padding:10px 15px;
+#profile .edit-button {
+  margin: 0px 30px;
+  padding: 10px 15px;
   font-size: 1.2em;
   color: white;
-  border:none;
+  border: none;
   /* border:1px solid rgba(101, 153, 153, 1); */
   background: none;
   border-radius: none;
@@ -132,19 +132,17 @@
   margin: 0px 30px;
   padding: 10px 15px;
   font-size: 1.2em;
-  color:white;
-  border:none;
+  color: white;
+  border: none;
   /* border:1px solid rgb(177, 54, 54); */
   background: none;
   background-color: rgb(177, 54, 54, 0.5);
 }
 
-#edit-profile{
+#edit-profile {
   display: flex;
   flex-direction: column;
 }
-
-
 
 /* -----     PROFILE END   ------- */
 
@@ -154,9 +152,8 @@
   flex-direction: row;
   justify-self: end;
   color: rgb(177, 54, 54);
-  border:1px solid rgb(177, 54, 54);
-  background-color:rgb(177, 54, 54,0.2);
-  
+  border: 1px solid rgb(177, 54, 54);
+  background-color: rgb(177, 54, 54, 0.2);
 }
 
 .employee-form {
@@ -312,18 +309,30 @@
   background: none;
   background-color: rgba(101, 153, 153, 0.5);
 }
-.p-upload{
-  margin-left:35px;
+
+.p-upload {
+  margin-left: 35px;
 }
-.p-error{
+
+.p-error {
   color: red;
   text-transform: uppercase;
 }
-.div-uploadfile-user{
+
+.div-uploadfile-user {
   margin-top: 3vh;
 }
-.p-error-profile{
-  margin-bottom:3vh;
+
+.p-error-profile {
+  margin-bottom: 3vh;
   color: red;
   text-transform: uppercase;
+}
+
+.div-button-profile {
+  margin-top: 2vh;
+}
+
+.edit-button-upload {
+  margin-bottom: 1vh;
 }
