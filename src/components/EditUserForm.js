@@ -13,7 +13,7 @@ class EditUserForm extends Component {
     address: this.props.admin.address,
     email: this.props.admin.email,
     company: this.props.admin.company,
-    imageUrl: '',
+    imageUrl: this.props.admin.imageUrl,
   }
 
   handleSubmit = (event) => {
