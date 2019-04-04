@@ -53,12 +53,10 @@ class EmployeeProfile extends Component {
         <div className="container-employee-form-profile">
           {this.state.editing && <EditEmployeeDataForm onSubmit={this.handleUpdate} employee={this.state.data} />}
           {!this.state.editing &&
-            <>
-              <div className="employee-image">
-
+            <>              
                 {/* <FontAwesomeIcon icon="user" className="image-employee" /> */}
-                <img src={imageUrl} alt="profile" />
-              </div>
+              <img className="image-employee" src={imageUrl} alt="profile" />
+              
               <h2 className='employee-h2'>{username} <span>' s Profile</span></h2>
               <div className="fields">
                 <h2>Name: <span>{username}</span></h2>
