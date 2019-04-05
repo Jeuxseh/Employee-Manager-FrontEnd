@@ -24,7 +24,7 @@ class Login extends Component {
           })
         }
       })
-      .catch(error => console.log(error))
+      .catch(error => (error))
   }
 
   handleChange = (event) => {
@@ -44,7 +44,7 @@ class Login extends Component {
           <label>Password</label>
           <input className="input-placeholder" type="password" name="password" value={password} onChange={this.handleChange} />
           {this.state.error && <p className="p-error">{this.state.error}</p>}
-          <input class="submitButton" type="submit" value="Login"/>
+          <input className="submitButton" type="submit" value="Login"/>
         </form>
         <p>Don't have account?
           <Link to={"/signup"}> Sign up</Link>

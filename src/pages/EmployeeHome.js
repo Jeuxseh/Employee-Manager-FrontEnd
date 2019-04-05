@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import employeeService from '../services/employeeServices';
 import HoursTable from '../components/HoursTable'
-import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Moment from 'react-moment';
 import '../stylesheets/employeeCalendar.css'
@@ -157,7 +156,7 @@ class EmployeeHome extends Component {
   }
 
   render() {
-    const { _id, username } = this.state.data;
+    const { username } = this.state.data;
     const { isLoading } = this.state;
 
     var currentDate = new Date();

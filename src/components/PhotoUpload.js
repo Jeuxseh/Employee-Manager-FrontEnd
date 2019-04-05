@@ -44,7 +44,7 @@ class ProfilePage extends Component {
           {/* {this.state.avatarURL &&
             <img src={this.state.avatarURL} alt="uploading" />
           } */}
-          <label class="edit-button">
+          <label className="edit-button">
             Upload Image
             <FileUploader
               hidden

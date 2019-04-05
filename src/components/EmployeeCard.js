@@ -42,7 +42,7 @@ class EmployeeCard extends Component {
                 <img className="img-container" src={imageUrl} alt={username} />
               </div>
             </Link>
-            <h2 classname="name">{username} <br/> {lastname}</h2>
+            <h2 className="name">{username} <br/> {lastname}</h2>
           
           </div>
 
