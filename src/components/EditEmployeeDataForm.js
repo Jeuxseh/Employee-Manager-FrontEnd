@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import employeeService from '../services/employeeServices';
-import PhotoUpload from '../components/PhotoUpload';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class EmployeeDataForm extends Component {
 
@@ -249,7 +247,6 @@ class EmployeeDataForm extends Component {
   }
 
   render() {
-    console.log(this.state);
     const { monday, tuesday, wednesday, thursday, friday, saturday, sunday } = this.state.schedule;
     return (
       <div className="container-employee-form">

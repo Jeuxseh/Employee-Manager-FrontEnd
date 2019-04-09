@@ -16,11 +16,15 @@ class EmployeesList extends Component {
     this.sortEmployees(this.state.employees)
   }
 
+  componentWillUnmount(){
+    clearInterval(this.timer);
+  }
+  
   // CON LA SIGUIENTE FUNCIÓN OBTENEMOS LA DATA DE TODOS LOS EMPLEADOS QUE HAYAMOS
   // CREADO EN NUESTRA BASE DE DATOS
 
   getAllEmployees = () => {
-    setTimeout(this.getAllEmployees, 20000);
+    const timer = setTimeout(this.getAllEmployees, 20000);
     employeeServices.getAll()
       .then(data => {
         data.forEach((employee,index) => {
@@ -30,6 +34,7 @@ class EmployeesList extends Component {
         this.setState({
           data: newData,
         })
+        this.timer = timer;
       })
       .catch(err => console.log(err));
   }

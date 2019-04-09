@@ -14,6 +14,7 @@ import ConditionalUser from './components/ConditionalUser';
 import NewEmployee from './pages/NewEmployee';
 import EmployeeCalendar from './pages/EmployeeCalendar';
 import EmployeeProfile from './components/EmployeeProfile';
+import Error404 from './pages/Error404';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faCaretSquareLeft, faCaretSquareRight, faHome, faCalendarAlt, faUserAlt, faUser, faClipboardList, faPhone, faUserPlus, faBusinessTime, faUserClock, faUserSlash} from '@fortawesome/free-solid-svg-icons';
 import firebase from 'firebase';
@@ -52,6 +53,7 @@ class App extends Component {
           <Switch>
             <AnonRoute exact path="/signup" component={Signup} />
             <AnonRoute exact path="/login" component={Login} />
+            <Route path="/error404" component={Error404} />
             <Route path="/" component={Layout} />
           </Switch>
         </div>
