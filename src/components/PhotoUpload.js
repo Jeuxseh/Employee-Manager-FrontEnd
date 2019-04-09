@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import firebase from 'firebase';
 import FileUploader from 'react-firebase-file-uploader';
 
+// COMPONENTE PARA PODER SUBIR FOTOS (URL) A LA BASE DE DATOS
+
 class ProfilePage extends Component {
 
   state = {

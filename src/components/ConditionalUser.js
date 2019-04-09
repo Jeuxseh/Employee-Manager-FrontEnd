@@ -3,7 +3,9 @@ import { withAuth } from '../providers/AuthProvider';
 import User from '../pages/User';
 import EmployeeUser from '../pages/EmployeeUser';
 
-class ConditionalHome extends Component {
+// COMPONENTE QUE RENDERIZA EL LA VISTA DEL PROFILE EN FUNCIÓN DEL TIPO DE USUARIO
+
+class ConditionalUser extends Component {
   render() {
     const { adminId } = this.props.user;
     return (
@@ -14,4 +16,4 @@ class ConditionalHome extends Component {
   }
 }
 
-export default withAuth(ConditionalHome);
+export default withAuth(ConditionalUser);

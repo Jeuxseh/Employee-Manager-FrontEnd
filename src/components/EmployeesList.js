@@ -3,6 +3,7 @@ import EmployeeCard from './EmployeeCard';
 import employeeServices from '../services/employeeServices';
 import '../stylesheets/employee-card-list.css'
 
+// COMPONENTE QUE RENDERIZA LA LISTA DE CARDS CON TODOS LOS EMPLEADOS QUE EL ADMIN HAYA CREADO
 
 class EmployeesList extends Component {
 
@@ -10,12 +11,13 @@ class EmployeesList extends Component {
     data: [],
     employees: [],
   }
-  // Todo añadir estado del loading para indicar que esta carganado
   componentDidMount() {
     this.getAllEmployees();
     this.sortEmployees(this.state.employees)
   }
 
+  // CON LA SIGUIENTE FUNCIÓN OBTENEMOS LA DATA DE TODOS LOS EMPLEADOS QUE HAYAMOS
+  // CREADO EN NUESTRA BASE DE DATOS
 
   getAllEmployees = () => {
     setTimeout(this.getAllEmployees, 20000);
@@ -32,32 +34,28 @@ class EmployeesList extends Component {
       .catch(err => console.log(err));
   }
 
+  // FUNCIÓN QUE ORDENA LOS EMPLEADOS POR ESTADOS (COLORES)
+
   sortEmployees = (employees) => {
     const newData = employees.sort((x, y) => {
       if (x.stillWorking === true && y.stillWorking !== true) {
         return -1;
       }
-
       if (x.stillWorking !== true && y.stillWorking === true) {
         return 1;
       }
-      
       if (x.stillWorking === true && y.stillWorking === true) {
         return 0;
       }
-
       if (x.isWorkingToday === true && y.isWorkingToday !== true) {
         return -1;
       }
-
       if (x.isWorkingToday !== true && y.isWorkingToday === true) {
         return 1;
       }
-
       if (x.isWorkingToday !== true && y.isWorkingToday !== true) {
         return 0;
       }
-
       return 0;
     })
     return newData;
