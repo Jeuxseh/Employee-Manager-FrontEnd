@@ -55,7 +55,6 @@ class EditUserForm extends Component {
         <form className="admin-form" onSubmit={this.handleSubmit}>
         <img src={`${this.state.imageUrl}`} alt="imageProfile" className="image-employee" />
 
-          {/* <div className="title-row"> */}
             <h2 className="employee-h2">My profile</h2>
           {/* </div> */}
           <h3 className="input-user">Email: <input className="box-form" placeholder="email..." onChange={this.handleChange} value={this.state.email} name="email" type="email" /></h3>

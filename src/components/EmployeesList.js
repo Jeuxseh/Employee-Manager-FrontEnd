@@ -66,20 +66,26 @@ class EmployeesList extends Component {
     return newData;
   }
 
+  // FUNCION QUE AÑADE LA PROPIEDAD DE ESTAR TRABAJANDO, HABER TRABAJDO, TRABAJAR MÁS TARDE O NO TRABAJAR HOY
+
   compareDay = (employee, index) => {
     var currentDate = new Date();
     var day = currentDate.toString().substr(0, 3).toLocaleLowerCase();
-    const currentTime = currentDate.toString().substr(15, 16).split(':').map(timer => parseInt(timer)).splice(0, 2)
+    // CONTANTE EN LA QUE ALMACENAN LAS HORAS Y LOS MINUTOS QUE SON AHORA
+    const currentTime = currentDate.toString().substr(15, 16).split(':').splice(0, 2).map(timer => parseInt(timer))
     for (var key in employee.schedule) {
-      const finishHour = employee.schedule[key].endHour.split(':').map(timer => parseInt(timer));
+      // PARA CADA DIA SACAMOS LA HORA DE INICIO Y DE FINAL
       const initialHour = employee.schedule[key].initHour.split(':').map(timer => parseInt(timer));
+      const finishHour = employee.schedule[key].endHour.split(':').map(timer => parseInt(timer));
       if (key.toString().substr(0, 3) === day && employee.schedule[key].initHour !== "") {
+        // COMPARACIÓN DEL DÍA DE HOY CON LOS DIAS DEL EMPLEADO
         employee.isWorkingToday = true;
         if (((currentTime[0] === initialHour[0] && currentTime[1] >= initialHour[1])
           || (currentTime[0] > initialHour[0]))
           && ((currentTime[0] === finishHour[0] && currentTime[1] <= finishHour[1])
             || (currentTime[0] < finishHour[0]))) {
-          employee.stillWorking = true
+              // COMPARACIÓN DEL TRAMO DE TRABAJO CON LA HORA QUE ES
+          employee.stillWorking = true;
         }
         if (((currentTime[0] === initialHour[0] && currentTime[1] <= initialHour[1])
           || currentTime[0] < initialHour[0])) {
@@ -92,7 +98,7 @@ class EmployeesList extends Component {
       }
     }
   }
-
+  // RENDERIZACIÓN DE LA CARD PASÁNDOLE LA DATA QUE HEMOS REUNIDO AQUÍ
   render() {
     return (
       <ul className="card-ul">

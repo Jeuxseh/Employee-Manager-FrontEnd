@@ -43,9 +43,6 @@ class ProfilePage extends Component {
             <p className="p-upload">Progress: {this.state.progress}</p>
           }
         <form className="buttons-container">
-          {/* {this.state.avatarURL &&
-            <img src={this.state.avatarURL} alt="uploading" />
-          } */}
           <label className="edit-button">
             Upload Image
             <FileUploader
