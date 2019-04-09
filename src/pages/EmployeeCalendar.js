@@ -43,8 +43,6 @@ class EmployeeCalendar extends Component {
 
   //traido de HourTable.js
   getDataRows = () => {
-    // const initHour = "05:25";
-    // const endHour = "22:12";
     const arrayRows = [];
     const n1 = parseInt(this.state.currentInitHour)
     const n2 = parseInt(this.state.currentEndHour)
@@ -61,7 +59,8 @@ class EmployeeCalendar extends Component {
       isLoading: false
     })
   }
-  //traido de HourTable.js
+
+  //Calculo altura % de la rowHour
   getHeigth = () => {
     const min1 = this.state.currentInitHour.split(':');
     const minInit = min1[1];
@@ -81,7 +80,6 @@ class EmployeeCalendar extends Component {
     } else if (minEnd === "00") {
       heightFinish = 0
     }
-
 
     this.setState({
       heightInit: heightStart,

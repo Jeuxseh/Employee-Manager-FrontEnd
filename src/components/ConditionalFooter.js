@@ -3,7 +3,7 @@ import { withAuth } from '../providers/AuthProvider';
 import Footer from '../components/Footer';
 import FooterEmployee from '../components/FooterEmployee';
 
-class ConditionalHome extends Component {
+class conditionalFooter extends Component {
   render() {
     const { adminId } = this.props.user;
     return (
@@ -14,4 +14,4 @@ class ConditionalHome extends Component {
   }
 }
 
-export default withAuth(ConditionalHome);
+export default withAuth(conditionalFooter);
