@@ -2,6 +2,8 @@ import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { withAuth } from '../providers/AuthProvider';
 
+// RUTAS A LAS QUE SOLO PUEDE ACCEDER UN ADMINISTRADOR
+
 const AdminRoute = ({ component: Component,user, isLogged, ...rest }) => {
   return (
     <Route

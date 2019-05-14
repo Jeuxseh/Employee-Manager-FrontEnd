@@ -45,7 +45,6 @@
 }
 
 #profile .container-employee-form {
-  /* justify-content: space-evenly; */
   align-items: flex-start;
   padding-bottom: 0px;
   height: 100vh;
@@ -346,4 +345,11 @@
 
 .edit-button-upload {
   margin-bottom: 1vh;
+}
+.admin-form {
+  /* margin-top: 2vh; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }

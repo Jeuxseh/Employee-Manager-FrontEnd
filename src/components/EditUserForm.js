@@ -52,10 +52,11 @@ class EditUserForm extends Component {
   render() {
     return (
       <div className="container-employee-form">
-        <form className="employee-form" onSubmit={this.handleSubmit}>
-          <div className="title-row">
+        <form className="admin-form" onSubmit={this.handleSubmit}>
+        <img src={`${this.state.imageUrl}`} alt="imageProfile" className="image-employee" />
+
             <h2 className="employee-h2">My profile</h2>
-          </div>
+          {/* </div> */}
           <h3 className="input-user">Email: <input className="box-form" placeholder="email..." onChange={this.handleChange} value={this.state.email} name="email" type="email" /></h3>
           <h3 className="input-user">Company: <input className="box-form" placeholder="company..." onChange={this.handleChange} value={this.state.company} name="company" type="text" /></h3>
           <h3 className="input-user">Phone: <input className="box-form" placeholder="phone..." onChange={this.handleChange} value={this.state.phone} name="phone" type="number" /></h3>

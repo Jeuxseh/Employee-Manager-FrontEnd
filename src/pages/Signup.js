@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withAuth } from '../providers/AuthProvider';
 import '../stylesheets/login.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class Signup extends Component {
 
@@ -67,7 +66,7 @@ class Signup extends Component {
           
           {this.state.error && <p className="p-error">{this.state.error}</p>}
 
-          <input class="submitButton" type="submit" value="Signup" />
+          <input className="submitButton" type="submit" value="Signup" />
         </form>
         <p>Already have account?
           <Link to={"/login"}> Login</Link>

@@ -3,22 +3,19 @@ import { Link } from 'react-router-dom';
 import { withAuth } from '../providers/AuthProvider';
 import '../stylesheets/navbar.css';
 
+// COMPONENTE QUE RENDERIZA LA NAVBAR EN TODA LA APP
+
 class Navbar extends Component {
-  render() {
-    const { isLogged, user, logout } = this.props;
-    const { username } = user;  
-    if (isLogged) {
-      return <div className="container-navbar">
-        <h3 className="name-navbar">{ username }</h3>
-        <p className="name-navbar" onClick={logout}>Logout</p>
-      </div>
-    } else {
-      return <div>
-        <Link to='/login'>Login</Link>
-        <Link to='/signup'>Signup</Link>
-      </div>
-    }
   
+  render() {
+
+    const { user, logout } = this.props;
+    const { username } = user;
+
+    return <div className="container-navbar">
+      <h3 className="name-navbar">{username}</h3>
+      <p className="name-navbar" onClick={logout}>Logout</p>
+    </div>
   }
 }
 
