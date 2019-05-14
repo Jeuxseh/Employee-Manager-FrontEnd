@@ -2,18 +2,23 @@
 
 ​Employee Manager
 
+# Developers
+
+​Jesus Benages , Miguel Angel Moreno , Marc Benaiges
+
+# Link to App:
+
+​https://employeemanager-ca333.firebaseapp.com/login
+
+* use in mode mobile device at browser, iphone X prefered
+
 ## Description
 
-​
-
 A web-app where you can manage the task and schedules of your employes
-
-​
 
 ## User Stories
 
 ​
-
 - **404:** As an anon/user I can see a 404 page if I try to reach a page that does not exist so that I know it's my fault
 
 - **Signup:** As an anon I can sign up in the platform 
